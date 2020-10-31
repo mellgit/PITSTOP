@@ -5,6 +5,7 @@
 }
 
 .content {
+    background: linear-gradient(90deg, #FFFFFF 0%, #F7FAFF 45.81%);
     width: 350px;
     position: absolute;
     top: 50%;
@@ -48,6 +49,20 @@
 
 .checkbox_remember_me input {
     margin-right: 7px;
+    position: relative;
+}
+
+.checkbox_remember_me input::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #E9F0FD;
+}
+
+.checkbox_remember_me input:checked::after{
+    visibility: hidden;
 }
 
 .my_button {

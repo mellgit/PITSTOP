@@ -6,3 +6,9 @@
 html {
     font-size: 12px;
 }
+
+body {
+    background: #F7FAFF;
+    min-width: 100vw;
+    min-height: 100vh;
+}
