@@ -1,0 +1,80 @@
+.wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    width: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 2rem;
+    line-height: 28px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.title img{
+    padding-right: 10px;
+}
+
+.my_text_input {
+    font-size: 1.3rem;
+    border: 0.5px solid #8D91A5;
+    box-sizing: border-box;
+    outline: none;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.wrap_inputs {
+    margin-bottom: 16px;
+}
+
+.checkbox_remember_me {
+    margin-bottom: 16px;
+    display: flex;
+    color: #8D91A5;
+}
+
+.checkbox_remember_me input {
+    margin-right: 7px;
+}
+
+.my_button {
+    background-color: #6200E8;
+    border-radius: 5px;
+    color: white;
+    margin-right: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 370px) {
+    .content {
+        width: calc(100% - 10px);
+        padding: 20px;
+    }
+}
+
+/* только для логина */
+.input_login {
+    border-radius: 5px 5px 0 0;
+}
+
+.input_password {
+    border-radius: 0 0 5px 5px;
+}

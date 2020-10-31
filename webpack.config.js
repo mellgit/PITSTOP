@@ -6,7 +6,8 @@ module.exports = {
     entry: "./src/index.js",
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "index-bundle.js"
+        filename: "index-bundle.js",
+        publicPath: '/'
     },
     devtool: 'inline-source-map',
     plugins: [
@@ -40,7 +41,19 @@ module.exports = {
                         loader: 'file-loader'
                     }
                 ]
+            },
+            {
+                test: /\.svg$/,
+                use: {
+                    loader: 'svg-url-loader',
+                    options: {
+                        encoding: 'base64'
+                    }
+                }
             }
         ]
-    }
+    },
+    devServer: {
+        historyApiFallback: true,
+    },
 }
