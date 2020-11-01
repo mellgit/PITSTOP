@@ -1,6 +1,6 @@
 import React from 'react'
-import style from './Login.module.css'
-import image from '../../public/Group.svg'
+import style from '../Login.module.css'
+import image from '../../../public/Group.svg'
 
 const Login = () => {
     return <div className={style.wrap}>
@@ -13,7 +13,7 @@ const Login = () => {
             </div>
 
             <div className={style.wrap_inputs}>
-                <input className={`${style.my_text_input} ${style.input_login}`} type="text" placeholder="Логин" />
+                <input className={`${style.my_text_input} ${style.input_login} hide`} type="text" placeholder="Логин" />
                 <input className={`${style.my_text_input} ${style.input_password}`} type="password" placeholder="Пароль" />
             </div>
 

@@ -93,3 +93,11 @@
 .input_password {
     border-radius: 0 0 5px 5px;
 }
+
+/* только для восстановления пароля */
+.arrow {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    cursor: pointer;
+}
