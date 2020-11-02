@@ -3,16 +3,16 @@ import "./App.css";
 import Head from './Head';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
-import { Path } from './path';
+import { path } from './path';
 import Login from './components/loginAndPasswordRecovery/Login/Login';
 import PasswordRecovery from './components/loginAndPasswordRecovery/PasswordRecovery/PasswordRecovery';
 
 const App = (props) => {
-    if (props.location.pathname === Path.LOGIN) {
+    if (props.location.pathname === path.LOGIN) {
         return <Login/>
     }
 
-    if (props.location.pathname === Path.PASSWORD_RECOVERY) {
+    if (props.location.pathname === path.PASSWORD_RECOVERY) {
         return <PasswordRecovery/>
     }
 
