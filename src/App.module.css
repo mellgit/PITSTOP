@@ -1,0 +1,20 @@
+.app {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 188px 1fr;
+    grid-template-areas: 
+        "header header"
+        "menu main";
+}
+
+.header {
+    grid-area: header;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.main {
+    grid-area: main;
+}

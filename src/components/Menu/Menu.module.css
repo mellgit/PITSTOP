@@ -1,0 +1,14 @@
+.menu {
+    margin-left: 20px;
+    overflow: hidden;
+    color: #8D91A5;
+}
+
+.menu > :not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #8D91A5;
+}

@@ -3,9 +3,9 @@ import style from "./Header.module.css"
 import logo from "../../assets/images/logo_company.svg"
 import loupe from "../../assets/images/loupe.svg"
 
-const Header = () => {
+const Header = (props) => {
     return (
-        <header className={style.header}>
+        <header className={`${style.header} ${props.className}`}>
             <div className={style.main_header}>
                 <img src={logo} />
                 <h1 className={style.title}>Company name</h1>
