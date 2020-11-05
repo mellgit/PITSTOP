@@ -10,6 +10,7 @@ const Menu = (props) => {
                         {...item} 
                         key={item.name} 
                         toggleOpen={() => { props.toggleOpen(item.name) }}
+                        toggleActiveSubElement={props.toggleActiveSubElement(item.name)}
                     />
                 )
             }

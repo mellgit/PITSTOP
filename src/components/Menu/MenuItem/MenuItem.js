@@ -7,7 +7,7 @@ import SubElement from "./SubElement/SubElement"
 
 const MenuItem = (props) => {
     return (
-        <div className={`${style.menu_item} ${props.isOpen ? `${style.active}` : null}`}>
+        <div className={`${style.menu_item} ${props.isActive ? `${style.active}` : null}`}>
             {
                 props.isNeedToGoByUrl
                     ? <Link to={props.url} className={style.title} onClick={props.toggleOpen}>
@@ -15,7 +15,7 @@ const MenuItem = (props) => {
                         <span className={style.name}>{props.name}</span>
                         { 
                             props.children.length > 0
-                                ? <img src={props.isOpen ? arrowUp : arrowDown} className={style.arrow} />
+                                ? <img src={props.isActive ? arrowUp : arrowDown} className={style.arrow} />
                                 : null
                         }
                     </Link>
@@ -24,17 +24,20 @@ const MenuItem = (props) => {
                         <span className={style.name}>{props.name}</span>
                         { 
                             props.children.length > 0
-                                ? <img src={props.isOpen ? arrowUp : arrowDown} className={style.arrow} />
+                                ? <img src={props.isActive ? arrowUp : arrowDown} className={style.arrow} />
                                 : null
                         }
                     </span>
             }
 
             {
-                props.isOpen && props.children.length > 0
+                props.isActive && props.children.length > 0
                     ? <div className={style.list_items}>
                         {
-                            props.children.map(item => <SubElement {...item} key={item.name}/>)
+                            props.children.map(item => <SubElement 
+                                {...item} 
+                                key={item.name}
+                                toggleActiveSubElement={() => props.toggleActiveSubElement(item.name)}/>)
                         }
                     </div>
                     : null

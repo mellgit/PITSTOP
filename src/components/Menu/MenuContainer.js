@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import MenuClassContainer from "./MenuClassContainer";
 import { selector } from "../../bll/selector"
-import { actionCreatorToggleOpen } from "../../bll/reducers/reducerMenu";
+import { actionCreatorToggleActiveSubElement, actionCreatorToggleOpen } from "../../bll/reducers/reducerMenu";
 
 const mapStateToProps = (state) => ({
     menu: selector.getMenu(state)
@@ -10,6 +10,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     toggleOpen(name) {
         dispatch(actionCreatorToggleOpen(name))
+    },
+
+    toggleActiveSubElement(parentName) {
+        return (name) => {
+            dispatch(actionCreatorToggleActiveSubElement(name, parentName))
+        }
     }
 })
 

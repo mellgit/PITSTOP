@@ -1,7 +1,9 @@
 .app {
+    min-width: 100vw;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 188px 1fr;
+    grid-template-columns: 198px 1fr;
     grid-template-areas: 
         "header header"
         "menu main";

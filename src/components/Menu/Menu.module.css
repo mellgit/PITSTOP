@@ -1,5 +1,6 @@
 .menu {
-    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
     overflow: hidden;
     color: #8D91A5;
 }
