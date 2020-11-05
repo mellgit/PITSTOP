@@ -4,16 +4,18 @@ import style from "./Menu.module.css"
 
 const Menu = (props) => {
     return (
-        <div className={`${style.menu} ${props.className}`}>
-            {
-                props.menu.map(item => <MenuItem 
-                        {...item} 
-                        key={item.name} 
-                        toggleOpen={() => { props.toggleOpen(item.name) }}
-                        toggleActiveSubElement={props.toggleActiveSubElement(item.name)}
+        <div className={`${style.wrap} ${props.className}`}>
+            <div className={style.menu}>
+                {
+                    props.menu.map(item => <MenuItem
+                        {...item}
+                        key={item.id}
+                        toggleOpen={() => { props.toggleOpen(item.id) }}
+                        toggleActiveSubElement={props.toggleActiveSubElement(item.id)}
                     />
-                )
-            }
+                    )
+                }
+            </div>
         </div>
     )
 }

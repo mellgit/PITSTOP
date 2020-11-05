@@ -8,13 +8,13 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    toggleOpen(name) {
-        dispatch(actionCreatorToggleOpen(name))
+    toggleOpen(id) {
+        dispatch(actionCreatorToggleOpen(id))
     },
 
-    toggleActiveSubElement(parentName) {
-        return (name) => {
-            dispatch(actionCreatorToggleActiveSubElement(name, parentName))
+    toggleActiveSubElement(parentId) {
+        return (id) => {
+            dispatch(actionCreatorToggleActiveSubElement(id, parentId))
         }
     }
 })

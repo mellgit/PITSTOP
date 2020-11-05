@@ -11,7 +11,7 @@ const MenuItem = (props) => {
             {
                 props.isNeedToGoByUrl
                     ? <Link to={props.url} className={style.title} onClick={props.toggleOpen}>
-                        <img src={props.iconHover} />
+                        <img src={props.isActive ?props.iconHover :props.icon} />
                         <span className={style.name}>{props.name}</span>
                         { 
                             props.children.length > 0
@@ -20,7 +20,7 @@ const MenuItem = (props) => {
                         }
                     </Link>
                     : <span className={style.title} onClick={props.toggleOpen}>
-                        <img src={props.icon} />
+                        <img src={props.isActive ?props.iconHover :props.icon} />
                         <span className={style.name}>{props.name}</span>
                         { 
                             props.children.length > 0
@@ -36,8 +36,8 @@ const MenuItem = (props) => {
                         {
                             props.children.map(item => <SubElement 
                                 {...item} 
-                                key={item.name}
-                                toggleActiveSubElement={() => props.toggleActiveSubElement(item.name)}/>)
+                                key={item.id}
+                                toggleActiveSubElement={() => props.toggleActiveSubElement(item.id)}/>)
                         }
                     </div>
                     : null

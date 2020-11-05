@@ -9,7 +9,7 @@ const SubElement = (props) => {
             className={`${style.item} ${props.isActive ?style.active :null}`} 
             onClick={props.toggleActiveSubElement}
         >
-            <img src={props.icon}/>
+            <img src={props.icon} width="14" height="14"/>
             <span className={style.name}>{props.name}</span>
         </Link>
     )
