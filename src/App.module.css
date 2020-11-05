@@ -1,0 +1,22 @@
+.app {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 218px 1fr;
+    grid-template-areas: 
+        "header header"
+        "menu main";
+}
+
+.header {
+    grid-area: header;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.main {
+    grid-area: main;
+}

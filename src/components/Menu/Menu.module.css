@@ -1,0 +1,37 @@
+.wrap {
+    direction: rtl;
+    overflow: auto;
+    margin-left: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.wrap::-webkit-scrollbar {
+    width: 4px;
+}
+
+.wrap::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: #E9F0FD;
+}
+
+.wrap::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #4A5CD9;
+}
+
+.menu {
+    padding-left: 8px;
+    padding-right: 10px;
+    direction: ltr;
+    color: #8D91A5;
+}
+
+.menu> :not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #8D91A5;
+}
