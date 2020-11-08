@@ -2,9 +2,10 @@ const path = require("path");
 const webpack = require("webpack");
 const ASSET_PATH = process.env.ASSET_PATH || '/static/';
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+require("babel-polyfill");
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: ["babel-polyfill", "./src/index.js"],
     output: {
         path: path.join(__dirname, "static"),
         filename: "index-bundle.js",
