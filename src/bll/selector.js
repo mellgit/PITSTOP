@@ -1,5 +1,13 @@
 export const selector = {
-    getMenu(state) {
-        return state.reducerMenu
+    menu: {
+        getMenu(state) {
+            return state.reducerMenu
+        }
+    },
+
+    client: {
+        getMenuData(state) {
+            return state.reducerClient.data
+        }
     }
 }

@@ -1,0 +1,34 @@
+.horizontalMenu {
+    list-style: none;
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.horizontalMenu a {
+    text-decoration: none;
+    color: #8D91A5;
+}
+
+.horizontalMenu .menuItem:not(:first-child) {
+    margin-left: 18px;
+}
+
+.line {
+    position: relative;
+    background-color: #DEEAFF;
+    height: 2px;
+}
+
+.slider {
+    position: absolute;
+    background-color: #4A5CD9;
+    height: 2px;
+    width: 120px;
+    left: 20px;
+    transition: width 0.3s linear,
+        left 0.3s linear;
+}
+
+.horizontalMenu .active {
+    color: #4A5CD9;
+}

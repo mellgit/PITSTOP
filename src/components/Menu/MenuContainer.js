@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
 import MenuClassContainer from "./MenuClassContainer";
 import { selector } from "../../bll/selector"
-import { actionCreatorToggleActiveSubElement, actionCreatorToggleOpen } from "../../bll/reducers/reducerMenu";
+import { actionCreatorChangeIsActiveByPath, actionCreatorToggleActiveSubElement, actionCreatorToggleOpen } from "../../bll/reducers/reducerMenu";
+import { compose } from "redux";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state) => ({
-    menu: selector.getMenu(state)
+    menu: selector.menu.getMenu(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -16,7 +18,14 @@ const mapDispatchToProps = (dispatch) => ({
         return (id) => {
             dispatch(actionCreatorToggleActiveSubElement(id, parentId))
         }
+    },
+    
+    setUpMenuByPath(path) {
+        dispatch(actionCreatorChangeIsActiveByPath(path))
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuClassContainer)
+export default compose(
+    withRouter,
+    connect(mapStateToProps, mapDispatchToProps)
+) (MenuClassContainer)
