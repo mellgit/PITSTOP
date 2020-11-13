@@ -7,7 +7,11 @@ export const selector = {
 
     profile: {
         getMenuData(state) {
-            return state.reducerProfile.data
+            return state.reducerProfile.menu
+        },
+
+        getPersonalData(state) {
+            return state.reducerPersonalData
         }
     }
 }

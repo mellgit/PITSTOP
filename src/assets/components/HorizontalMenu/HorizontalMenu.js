@@ -69,8 +69,6 @@ class HorizontalMenuClassContainer extends React.Component {
             leftMenu = this.state.menuRef.current.getBoundingClientRect().left;
         }
 
-        console.log(leftItem, leftMenu)
-
         const activeEl = this.props.data.find(v => v.isActive);
 
         let width = 0;

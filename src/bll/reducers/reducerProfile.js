@@ -1,7 +1,7 @@
 import { path } from "../../path";
 
 const initialState = {
-    data: [
+    menu: [
         {
             id: 1,
             path: path.PROFILE_PERSONAL_DATA,
@@ -34,11 +34,11 @@ const CHANGE_IS_ACTICVE_BY_PATH = "REDUCER_CLIENT_CHANGE_IS_ACTICVE_BY_PATH"
 const reducerProfile = (state=initialState, action) => {
     switch (action.type) {
         case CHANGE_IS_ACTICVE_BY_PATH:
-            const data = state.data.map(item => ({...item, isActive: item.path === action.path}));
+            const menu = state.menu.map(item => ({...item, isActive: item.path === action.path}));
 
             return {
                 ...state,
-                data
+                menu
             }
         default:
             return state

@@ -1,0 +1,29 @@
+.personal_data_wrap {
+    background: #FFFFFF;
+    box-shadow: 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.personal_data {
+    margin: 0 auto;
+    padding: 12px 0;
+    width: 323px;
+}
+
+.personal_data_item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.personal_data .personal_data_item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.personal_data_item_name {
+    color: #6977DF;
+}
+
+.personal_data_item_value {
+    color: #8D91A5;
+}
