@@ -1,12 +1,12 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import img from "../../assets/images/2019-09-17_17-11-17.png";
-import Clients from "./mainComponents/Clients/ClientsContainer";
+import { path } from "../../path";
+import Profile from "./mainComponents/Profile/ProfileContainer";
 
 const Main = (props) => {
     return (
         <main className={props.className}>
-            <Route path="/clients" render={() => <Clients/>}/>
+            <Route path={path.PROFILE} render={() => <Profile/>}/>
         </main>
     )
 }

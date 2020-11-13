@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 import style from "./HorizontalMenu.module.css"
 
 const HorizontalMenu = (props) => {
-    console.log("render")
-
     const styleSlider = {
         width: props.width,
         left: props.left
@@ -39,14 +37,16 @@ class HorizontalMenuClassContainer extends React.Component {
         this.state = {
             menuRef: React.createRef(),
             itemRef: React.createRef(),
-            idActive: activeEl !== undefined ? activeEl.id : activeEl,
+            idActive: activeEl !== undefined ? activeEl.id : undefined,
             width: 0,
             left: 0
         }
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const id = nextProps.data.find(v => v.isActive).id;
+        const activeEl = nextProps.data.find(v => v.isActive);
+
+        const id = activeEl !== undefined ? activeEl.id : undefined;
         return this.state.idActive !== id || 
             nextState.width !== this.state.width || 
             nextState.left !== this.state.left;
@@ -68,6 +68,8 @@ class HorizontalMenuClassContainer extends React.Component {
             leftItem = this.state.itemRef.current.getBoundingClientRect().left;
             leftMenu = this.state.menuRef.current.getBoundingClientRect().left;
         }
+
+        console.log(leftItem, leftMenu)
 
         const activeEl = this.props.data.find(v => v.isActive);
 

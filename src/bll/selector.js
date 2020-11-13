@@ -5,9 +5,9 @@ export const selector = {
         }
     },
 
-    client: {
+    profile: {
         getMenuData(state) {
-            return state.reducerClient.data
+            return state.reducerProfile.data
         }
     }
 }
