@@ -1,0 +1,33 @@
+.garage {
+    margin-top: 4px;
+    margin-right: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.added_car {
+    outline: none;
+    border: none;
+    width: 401px;
+    margin-top: 12px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #6977DF;
+    background-color: #E9F0FD;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .added_car {
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

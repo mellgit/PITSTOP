@@ -12,6 +12,26 @@ export const selector = {
 
         getPersonalData(state) {
             return state.reducerPersonalData
+        },
+
+        isOpenAddCarWindow(state) {
+            return state.reducerGarage.isOpenAddCarWindow
+        },
+
+        getCars(state) {
+            return state.reducerGarage.cars
+        },
+
+        getTypesCode(state) {
+            return {
+                get VIN() {
+                    return state.reducerGarage.typeCodeVIN
+                },
+
+                get frame() {
+                    return state.reducerGarage.typeCodeFrame
+                }
+            }
         }
     }
 }
