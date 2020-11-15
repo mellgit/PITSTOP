@@ -4,12 +4,14 @@ import reducerMenu from './reducers/reducerMenu'
 import reducerProfile from "./reducers/reducerProfile"
 import reducerPersonalData from "./reducers/reducerPersonalData"
 import reducerGarage from "./reducers/reducerGarage"
+import reducerBasket from "./reducers/reducerBasket"
 
 const reducer = combineReducers({
     reducerMenu,
     reducerProfile,
     reducerPersonalData,
-    reducerGarage
+    reducerGarage,
+    reducerBasket
 });
 
 const store = createStore(reducer, applyMiddleware(thunk));

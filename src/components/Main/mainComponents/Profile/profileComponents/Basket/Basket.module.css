@@ -1,0 +1,79 @@
+.basket {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1fr 264px;
+    overflow: auto;
+}
+
+.information {
+    margin-bottom: auto;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+.information>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+}
+
+.totalWithoutDiscount {
+    margin-bottom: 6px;
+    color: #A4A3B5;
+}
+
+.discount {
+    margin-bottom: 28px;
+    color: #A4A3B5;
+}
+
+.paidOrder {
+    border: none;
+    outline: none;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    color: #6977DF;
+    padding: 5px 0;
+    font-size: 1.1rem;
+    background: #E9F0FD;
+    border-radius: 6px;
+}
+
+.checkbox {
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #A4A3B5;
+    margin-bottom: 6px;
+}
+
+.checkbox img {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+}
+
+.products {
+    margin-right: 24px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+}
+
+.list_products {
+    margin-bottom: 20px;
+    padding-right: 7px;
+    overflow: auto;
+}
+
+.list_products > :not(:last-child) {
+    margin-bottom: 16px;
+}

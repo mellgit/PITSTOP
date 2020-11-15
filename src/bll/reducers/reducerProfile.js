@@ -5,7 +5,7 @@ const initialState = {
         {
             id: 1,
             path: path.PROFILE_PERSONAL_DATA,
-            name: "Личный данные",
+            name: "Личные данные",
             isActive: false
         },
         {

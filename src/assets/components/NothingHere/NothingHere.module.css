@@ -1,0 +1,20 @@
+.nothing_here {
+    text-align: center;
+}
+
+.nothing_here p {
+    color: #1E1A46;
+    font-size: 1.8rem;
+    margin-bottom: 27px;
+}
+
+.nothing_here a {
+    outline: none;
+    text-decoration: none;
+    background: #6977DF;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    padding: 10px 32px;
+}

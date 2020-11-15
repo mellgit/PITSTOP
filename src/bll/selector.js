@@ -32,6 +32,26 @@ export const selector = {
                     return state.reducerGarage.typeCodeFrame
                 }
             }
+        },
+
+        getBasket(state) {
+            return state.reducerBasket.basket
+        },
+
+        getTotal(state) {
+            return state.reducerBasket.total
+        },
+
+        getTotalWithotDiscount(state) {
+            return state.reducerBasket.totalWithotDiscount
+        },
+
+        getCount(state) {
+            return state.reducerBasket.сount
+        },
+
+        getIsSelectedAll(state) {
+            return state.reducerBasket.isSelectedAll
         }
     }
 }
