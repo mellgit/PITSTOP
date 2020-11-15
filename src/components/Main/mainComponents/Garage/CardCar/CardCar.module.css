@@ -1,0 +1,61 @@
+.card_car {
+    background: #EBEDFA;
+    border-radius: 8px;
+    padding: 5px 16px 11px 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 272px;
+}
+
+.orders {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 272px;
+}
+
+.title {
+    text-align: center;
+    color: #1E1A46;
+    font-size: 1.1rem;
+}
+
+.list_orders {
+    position: relative;
+    overflow: auto;
+    margin: 10px 0 17px 0;
+    padding-right: 7px;
+}
+
+.list_orders > :not(:last-child) {
+    margin-bottom: 19px;
+}
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #A4A3B5;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons button {
+    outline: none;
+    border: none;
+    color: #6977DF;
+    font-size: 1.1rem;
+    background: #FFFFFF;
+    box-shadow: 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 5px 30px;
+}
+
+.buttons> :first-child {
+    margin-right: 18px;
+}

@@ -1,5 +1,6 @@
 .wrap {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -33,7 +34,7 @@
     border-radius: 6px;
     color: #6977DF;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1.1rem;
     padding: 5px 0;
     line-height: 100%;
     width: 100%;
@@ -44,23 +45,38 @@
     margin-bottom: 10px;
 }
 
-.field input,
+.field > input,
 .name input {
     text-decoration: underline;
     border: none;
     outline: none;
+    background: inherit;
+    display: block;
+    width: 100%;
+}
+
+.field input,
+.name input,
+.field .value,
+.name .value {
     font-weight: 500;
     line-height: 16px;
 }
 
-.name input {
-    font-size: 14px;
+.field input,
+.field .value {
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.name .value, .name input {
+    font-size: 1.1rem;
     color: #1E1A46;
 }
 
-.field input {
+.field .value, .field input {
     text-align: end;
-    font-size: 12px;
+    font-size: 1rem;
     color: #232230;
 }
 
@@ -71,7 +87,7 @@
 
 .field {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
 }
 
 .field {
@@ -86,8 +102,9 @@
     cursor: pointer;
 }
 
-.code input {
+.field .code input {
     margin-right: 4px;
+    margin-left: 0px;
     position: relative;
     top: 1px;
     width: 12px;

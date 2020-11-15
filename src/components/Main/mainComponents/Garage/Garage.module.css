@@ -1,21 +1,42 @@
 .garage {
     margin-top: 4px;
     margin-right: 18px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cars {
+    margin-top: 19px;
+    width: 100%;
+    padding-right: 20px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.cars > :not(:last-child) {
+    margin-bottom: 16px;
 }
 
 .added_car {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.added_car button{
     outline: none;
     border: none;
-    width: 401px;
+    max-width: 401px;
+    width: 80%;
     margin-top: 12px;
     padding: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    font-size: 11px;
+    font-size: 1rem;
     line-height: 100%;
     text-transform: uppercase;
     color: #6977DF;

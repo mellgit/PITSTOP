@@ -1,3 +1,5 @@
+import svgBox from "../../assets/images/box.svg"
+
 const initialState = {
     isOpenAddCarWindow: false,
 
@@ -22,16 +24,101 @@ const initialState = {
             typeCode: "VIN",
             code: "123456789",
             orders: []
+        },
+        {
+            id: 1,
+            name: "Название машины",
+            brand: "Марка",
+            model: "Модель 123",
+            yearOfIssue: "1234",
+            modification: "4.8 PDK (440 л.с.)",
+            mileage: "123456789",
+            licensePlate: "123456789",
+            typeCode: "VIN",
+            code: "123456789",
+            orders: [
+                {
+                    id: 0,
+                    img: svgBox,
+                    name: "Название",
+                    status: "Пришло на распределительный склад",
+                }
+            ]
+        },
+        {
+            id: 2,
+            name: "Название машины",
+            brand: "Марка",
+            model: "Модель 123",
+            yearOfIssue: "1234",
+            modification: "4.8 PDK (440 л.с.)",
+            mileage: "123456789",
+            licensePlate: "123456789",
+            typeCode: "VIN",
+            code: "123456789",
+            orders: [
+                {
+                    id: 0,
+                    img: svgBox,
+                    name: "Название",
+                    status: "Пришло на распределительный склад",
+                },
+                {
+                    id: 1,
+                    img: svgBox,
+                    name: "Название",
+                    status: "Пришло на распределительный склад",
+                },
+                {
+                    id: 2,
+                    img: svgBox,
+                    name: "Название",
+                    status: "Пришло на распределительный склад",
+                },
+                {
+                    id: 3,
+                    img: svgBox,
+                    name: "Название",
+                    status: "Пришло на распределительный склад",
+                },
+                {
+                    id: 4,
+                    img: svgBox,
+                    name: "Название",
+                    status: "Пришло на распределительный склад",
+                },
+                {
+                    id: 5,
+                    img: svgBox,
+                    name: "Название",
+                    status: "Пришло на распределительный склад",
+                }
+            ]
         }
     ]
 }
 
 const TOGGLE_ADD_CAR_WINDOW = "TOGGLE_ADD_CAR_WINDOW"
 const ADD_CAR = "ADD_CAR"
+const CHANGE_DATA_CAR = "CHANGE_DATA_CAR"
 
 const reducerGarage = (state = initialState, action) => {
     switch (action.type) {
+        case CHANGE_DATA_CAR:
+            const index = state.cars.findIndex(car => car.id === action.car.id)
+
+            state.cars[index] = {...state.cars[index], ...action.car}
+
+            return {
+                ...state,
+                cars: [
+                    ...state.cars
+                ]
+            }
+
         case ADD_CAR: 
+            action.car.orders = []
+            
             return {
                 ...state,
                 cars: [
@@ -64,3 +151,14 @@ export const actionCreatorAddCar = ({name, brand, model, yearOfIssue,
             }
         }
     )
+
+const actionCreatorChangeDataCar = (car) => ({type: CHANGE_DATA_CAR, car})
+
+export const thunkCreatorSaveChangesCar = ({id, name, brand, model, yearOfIssue, 
+    modification, mileage, licensePlate, typeCode, code}) => async (dispatch) => {
+
+    const data = {id, name, brand, model, yearOfIssue, 
+        modification, mileage, licensePlate, typeCode, code}
+
+    dispatch(actionCreatorChangeDataCar(data))
+}

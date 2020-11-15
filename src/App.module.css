@@ -19,4 +19,28 @@
 
 .main {
     grid-area: main;
+    position: relative;
+}
+
+.main > :first-child {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+}
+
+.scroll_bar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.scroll_bar::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: #E9F0FD;
+}
+
+.scroll_bar::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #4A5CD9;
 }

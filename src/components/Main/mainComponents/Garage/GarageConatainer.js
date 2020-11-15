@@ -4,7 +4,8 @@ import { selector } from "../../../../bll/selector";
 import Garage from "./Garage";
 
 const mapStateToProps = (state) => ({
-    isOpenAddCarWindow: selector.profile.isOpenAddCarWindow(state)
+    isOpenAddCarWindow: selector.profile.isOpenAddCarWindow(state),
+    cars: selector.profile.getCars(state)
 })
 
 
