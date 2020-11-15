@@ -25,5 +25,9 @@ export const path = {
 
     get PROFILE_ORDERS() {
         return this.PROFILE + "/orders" 
+    },
+
+    get CATALOG() {
+        return "/catalog"
     }
 }

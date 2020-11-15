@@ -1,5 +1,5 @@
 .clients {
-    margin-right: 10%;
+    margin-right: 30px;
     display: grid;
     grid-template-rows: auto 1fr;
 }

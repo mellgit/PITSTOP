@@ -3,6 +3,9 @@ import { path } from "../../path"
 import svgProfile from "../../assets/images/menu/profile.svg"
 import svgProfileHover from "../../assets/images/menu/profileHover.svg"
 
+import svgCatalog from '../../assets/images/menu/catalog.svg'
+import svgCatalogHover from '../../assets/images/menu/catalogHover.svg'
+
 const initialState = [
     {
         id: 0,
@@ -12,6 +15,17 @@ const initialState = [
         isNeedToGoByUrl: true,
         isExact: false,
         url: path.PROFILE,
+        isActive: false,
+        children: []
+    },
+    {
+        id: 1,
+        name: "Каталог",
+        icon: svgCatalog,
+        iconHover: svgCatalogHover,
+        isNeedToGoByUrl: true,
+        isExact: false,
+        url: path.CATALOG,
         isActive: false,
         children: []
     }
