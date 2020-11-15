@@ -4,7 +4,7 @@ import HorizontalMenu from '../../../../assets/components/HorizontalMenu/Horizon
 import { path } from '../../../../path'
 import Garage from '../Garage/GarageConatainer'
 import style from "./Profile.module.css"
-import PersonalData from './profileComponents/PersonalDataContainer'
+import PersonalData from './profileComponents/PersonalData/PersonalDataContainer'
 
 const Profile = (props) => {
     return (

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { selector } from "../../../../../bll/selector";
+import { selector } from "../../../../../../bll/selector";
 import PersonalDataClassContainer from "./PersonalDataClassContainer";
 
 
