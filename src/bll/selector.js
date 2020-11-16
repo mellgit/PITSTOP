@@ -79,5 +79,19 @@ export const selector = {
         // getMaxPrice(state) {
         //     return state.reducerCatalog.maxPrice
         // }
+    },
+
+    login: {
+        isAuthorized(state) {
+            return state.reducerLogin.isAuthorized
+        },
+
+        isError(state) {
+            return state.reducerLogin.isError            
+        },
+
+        getErrorMessage(state) {
+            return state.reducerLogin.errorMessage
+        }
     }
 }

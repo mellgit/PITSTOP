@@ -14,48 +14,28 @@ const initialState = {
     cars: [
         {
             id: 0,
-            name: "Название машины",
-            brand: "Марка",
-            model: "Модель 123",
-            yearOfIssue: "1234",
+            name: "Acura ILX",
+            brand: "Acura",
+            model: "ILX",
+            yearOfIssue: "2012",
             modification: "4.8 PDK (440 л.с.)",
-            mileage: "123456789",
+            mileage: "1000",
             licensePlate: "123456789",
             typeCode: "VIN",
-            code: "123456789",
+            code: "4T1BF1FK8DU003231",
             orders: []
         },
         {
             id: 1,
-            name: "Название машины",
-            brand: "Марка",
-            model: "Модель 123",
-            yearOfIssue: "1234",
+            name: "",
+            brand: "TOYOTA",
+            model: "LAND CRUISER PRADO (_J15_)",
+            yearOfIssue: "2016",
             modification: "4.8 PDK (440 л.с.)",
-            mileage: "123456789",
+            mileage: "1000",
             licensePlate: "123456789",
             typeCode: "VIN",
-            code: "123456789",
-            orders: [
-                {
-                    id: 0,
-                    img: svgBox,
-                    name: "Название",
-                    status: "Пришло на распределительный склад",
-                }
-            ]
-        },
-        {
-            id: 2,
-            name: "Название машины",
-            brand: "Марка",
-            model: "Модель 123",
-            yearOfIssue: "1234",
-            modification: "4.8 PDK (440 л.с.)",
-            mileage: "123456789",
-            licensePlate: "123456789",
-            typeCode: "VIN",
-            code: "123456789",
+            code: "4T1BF1FK8DU603231",
             orders: [
                 {
                     id: 0,

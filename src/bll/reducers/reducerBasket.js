@@ -32,8 +32,25 @@ const ADD_PRODUCT_TO_BASKET = "ADD_PRODUCT_TO_BASKET"
 const reducerBasket = (state = initialState, action) => {
     switch (action.type) {
         case ADD_PRODUCT_TO_BASKET: {
+            action.product.isSelected = state.isSelectedAll
+
+            const product = action.product
+
+            let total = state.total
+            let totalWithotDiscount = state.totalWithotDiscount
+            let count = state.count
+
+            if (action.product.isSelected ) {
+                total += product.price * product.count
+                totalWithotDiscount += product.priceWithotDiscount * product.count
+                count += product.count
+            }
+
             return {
                 ...state,
+                total,
+                totalWithotDiscount,
+                count,
                 basket: [
                     ...state.basket,
                     action.product
@@ -191,7 +208,7 @@ const actionCreatorDeleteProduct = (id) => ({ type: DELETE_PRODUCT, id })
 
 export const thunkCreatorDeleteProduct = (id) => async (dispatch) => {
     dispatch(actionCreatorDeleteProduct(id))
-    dispatch()
+    dispatch(actionCreatorDeleteProductByBasket(id))
 }
 
 export const actionCreatorChangeCountProduct = (id, newCount) => ({ type: CHANGE_COUNT_PRODUCT, id, newCount })
@@ -205,14 +222,14 @@ export const thunkCreatorBuyProducts = (arrId) => async (dispatch) => {
     })
 } 
 
-export const actioncreatorAddProductToBasket = ({id, img, name, price, priceWithoutDiscount}) => ({
+export const actioncreatorAddProductToBasket = ({id, img, name, price, priceWithotDiscount}) => ({
     type: ADD_PRODUCT_TO_BASKET,
     product: {
         id, 
         img, 
         name, 
         price, 
-        priceWithoutDiscount,
+        priceWithotDiscount,
         count: 1,
         isSelected: false
     }

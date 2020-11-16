@@ -6,6 +6,7 @@ import reducerPersonalData from "./reducers/reducerPersonalData"
 import reducerGarage from "./reducers/reducerGarage"
 import reducerBasket from "./reducers/reducerBasket"
 import reducerCatalog from "./reducers/reducerCatalog"
+import reducerLogin from './reducers/reducerLogin'
 
 const reducer = combineReducers({
     reducerMenu,
@@ -13,7 +14,8 @@ const reducer = combineReducers({
     reducerPersonalData,
     reducerGarage,
     reducerBasket,
-    reducerCatalog
+    reducerCatalog,
+    reducerLogin
 });
 
 const store = createStore(reducer, applyMiddleware(thunk));

@@ -6,18 +6,27 @@ import { path } from '../../../path'
 import svgHiddenPassword from '../../../assets/images/visibility_off_24px_outlined.svg'
 import svgVisiblePassword from '../../../assets/images/visible_password.svg'
 import { connect } from 'react-redux'
-import { thunkCreatorSendLoginAndPassword } from "../../../bll/reducers/reducerLogin"
+import { actionCreatorToggleError, thunkCreatorSendLoginAndPassword } from "../../../bll/reducers/reducerLogin"
+import { selector } from '../../../bll/selector'
 
 const Login = (props) => {
     const [password, setPassword] = useState("")
 
     const hadlerPasswordInput = (e) => {
+        if (props.isError) {
+            props.disableError()
+        }
+
         setPassword(e.target.value);
     }
 
     const [login, setLogin] = useState("")
 
     const hadlerLoginInput = (e) => {
+        if (props.isError) {
+            props.disableError()
+        }
+
         setLogin(e.target.value);
     }
 
@@ -46,43 +55,51 @@ const Login = (props) => {
                 </p>
             </div>
 
+            {
+                props.isError
+                    ? <div className={style.error_message}>
+                        <p>{props.errorMessage}</p>
+                    </div>
+                    : null
+            }
+
             <div className={style.wrap_inputs}>
-                <input 
+                <input
                     onChange={hadlerLoginInput}
-                    className={`${style.my_text_input} ${style.input_login} hide`} 
-                    type="text" 
-                    placeholder="Логин" 
+                    className={`${style.my_text_input} ${style.input_login} ${props.isError ? style.error_field : ""}`}
+                    type="text"
+                    placeholder="Логин"
                     value={login}
                 />
 
                 <div className={style.wrap_password}>
-                    <input 
+                    <input
                         onChange={hadlerPasswordInput}
-                        className={`${style.my_text_input} ${style.input_password}`} 
+                        className={`${style.my_text_input} ${style.input_password} ${props.isError ? style.error_field : ""}`}
                         type={
                             isVisiblePassword
-                            ?"text"
-                            :"password"
+                                ? "text"
+                                : "password"
                         }
                         placeholder="Пароль"
                         value={password}
                     />
-                    <img 
+                    <img
                         onMouseDown={showPassword}
                         onMouseUp={hidePassword}
                         onMouseLeave={hidePassword}
-                        onDrag={(e)=>e.preventDefault()}
-                        onDragStart={(e)=>e.preventDefault()}
-                        src={isVisiblePassword 
-                            ?svgVisiblePassword
-                            :svgHiddenPassword} 
-                        className={style.visiability_password} 
+                        onDrag={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
+                        src={isVisiblePassword
+                            ? svgVisiblePassword
+                            : svgHiddenPassword}
+                        className={style.visiability_password}
                     />
                 </div>
             </div>
 
             <label className={style.checkbox_remember_me}>
-                <input type="checkbox" onChange={handlerRememberMe} checked={isRememberMe}/>
+                <input type="checkbox" onChange={handlerRememberMe} checked={isRememberMe} />
                 Запомнить меня
             </label>
 
@@ -96,11 +113,18 @@ const Login = (props) => {
 }
 
 
-const mapStateToProps = (state) => ({})
+const mapStateToProps = (state) => ({
+    isError: selector.login.isError(state),
+    errorMessage: selector.login.getErrorMessage(state)
+})
 
 const mapDispatchToProps = (dispatch) => ({
     sendLoginAndPassword(login, password) {
         dispatch(thunkCreatorSendLoginAndPassword(login, password))
+    },
+
+    disableError() {
+        dispatch(actionCreatorToggleError(false))
     }
 })
 

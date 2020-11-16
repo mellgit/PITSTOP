@@ -1,31 +1,31 @@
 const initialState = {
     fullName: {
         name: "ФИО",
-        value: ""
+        value: "Ларионов Осип Леонидович"
     },
     city: {
         name: "Город",
-        value: ""
+        value: "Москва"
     },
     office: {
         name: "Офис",
-        value: ""
+        value: "Тверская ул., 13."
     },
     phone: {
         name: "Номер телефона",
-        value: ""
+        value: "+7 999 999 99 99"
     },
     email: {
         name: "Email",
-        value: ""
+        value: "copaa6@gmail.com"
     },
     discount: {
         name: "Скидка",
-        value: ""
+        value: "-25%"
     },
     idProfile: {
         name: "Индивидуальный номер профиля",
-        value: ""
+        value: "0123"
     }
 }
 

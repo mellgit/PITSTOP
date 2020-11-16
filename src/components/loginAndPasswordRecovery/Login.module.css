@@ -78,6 +78,11 @@
     cursor: pointer;
 }
 
+.error_message {
+    font-size: 1rem;
+    color: red;
+}
+
 @media (max-width: 370px) {
     .content {
         width: calc(100% - 10px);
@@ -167,4 +172,8 @@
 
 .wrap_my_email_input .help_outline:hover + .help_message{
     display: block;
+}
+
+.error_field {
+    border-color: red;
 }
