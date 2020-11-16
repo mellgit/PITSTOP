@@ -53,5 +53,31 @@ export const selector = {
         getIsSelectedAll(state) {
             return state.reducerBasket.isSelectedAll
         }
+    },
+
+    catalog: {
+        getListCars(state) {
+            return state.reducerCatalog.listCars
+        },
+
+        getListProducts(state) {
+            return state.reducerCatalog.listProducts
+        },
+
+        isSortByPrice(state) {
+            return state.reducerCatalog.isSortByPrice
+        },
+
+        isSortByDiscount(state) {
+            return state.reducerCatalog.isSortByDiscount
+        },
+
+        // getMinPrice(state) {
+        //     return state.reducerCatalog.minPrice
+        // },
+
+        // getMaxPrice(state) {
+        //     return state.reducerCatalog.maxPrice
+        // }
     }
 }

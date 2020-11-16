@@ -5,13 +5,15 @@ import reducerProfile from "./reducers/reducerProfile"
 import reducerPersonalData from "./reducers/reducerPersonalData"
 import reducerGarage from "./reducers/reducerGarage"
 import reducerBasket from "./reducers/reducerBasket"
+import reducerCatalog from "./reducers/reducerCatalog"
 
 const reducer = combineReducers({
     reducerMenu,
     reducerProfile,
     reducerPersonalData,
     reducerGarage,
-    reducerBasket
+    reducerBasket,
+    reducerCatalog
 });
 
 const store = createStore(reducer, applyMiddleware(thunk));

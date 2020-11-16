@@ -10,7 +10,7 @@ const Header = (props) => {
                 <img src={logo} />
                 <h1 className={style.title}>Company name</h1>
             </div>
-            <div className={style.search}>
+            {/* <div className={style.search}>
                 <input type="text" className={style.search_input} />
                 <img src={loupe} className={style.search_loupe} />
             </div>
@@ -30,7 +30,7 @@ const Header = (props) => {
                     </g>
                 </svg>
 
-            </div>
+            </div> */}
         </header>
     )
 }

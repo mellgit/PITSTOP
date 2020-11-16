@@ -83,3 +83,13 @@
 .list_products > :not(:last-child) {
     margin-bottom: 16px;
 }
+
+@media (max-width: 1100px) {
+    .information {
+        width: 220px;
+    }
+
+    .list_products {
+        padding-right: 297px;
+    }
+}

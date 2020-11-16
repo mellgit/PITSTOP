@@ -9,7 +9,8 @@ import {scroll_bar} from '../../../../../../App.module.css'
 const Basket = (props) => {
 
     const styleNothingHere = {
-        marginTop: "35px"
+        marginTop: "35px",
+        marginRight: "334px"
     }
 
     const buyProducts = () => {

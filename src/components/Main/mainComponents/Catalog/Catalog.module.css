@@ -1,0 +1,116 @@
+.catalog {
+    margin-left: 38px;
+    padding-top: 72px;
+    padding-right: 376px;
+    margin-right: 16px;
+    height: calc(100% - 20px);
+    box-sizing: border-box;    
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    overflow: auto;
+}
+
+.sort {
+    margin-top: 12px;
+    color: #A4A3B5;
+    font-size: 1.3rem;
+}
+
+.sort> :not(:first-child) {
+    margin-left: 17px;
+    cursor: pointer;
+}
+
+.active_sort {
+    color: #6977DF;
+}
+
+.menu {
+    position: absolute;
+    top: 72px;
+    right: 31px;
+    width: 314px;
+    margin-bottom: auto;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.top_search {
+    width: calc(100% - 38px - 376px);
+    min-width: 341px;
+    height: 72px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu_title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.useFilter {
+    border: none;
+    outline: none;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    color: #6977DF;
+    padding: 5px 0;
+    font-size: 1.1rem;
+    background: #E9F0FD;
+    border-radius: 6px;
+}
+
+.filter> :not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.filter_price {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    font-size: 1rem;
+}
+
+.filter_price input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-align: right;
+    text-decoration: underline;
+    -moz-appearance: textfield;
+}
+
+.filter_price input::-webkit-outer-spin-button,
+.filter_price input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.list_cars {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item_list_cars {
+    font-size: 1.2rem;
+    color: #EFAE76;
+    background: #FFEFE0;
+    border-radius: 6px;
+    padding: 5px 16px;
+    margin-bottom: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.active_list_cars {
+    background: #6977DF;
+    box-shadow: 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
+    border-radius: 6px;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.search {
+    position: relative;
+    display: block;
+}
+
+.search_input {
+    width: 100%;
+    color: #232230;
+    font-size: 1rem;
+    background: #E9F0FD;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 46px 8px 19px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search_input::placeholder {
+    color: #A4A3B5;
+}
+
+.search_loupe {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}

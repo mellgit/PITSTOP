@@ -1,5 +1,7 @@
 import svgBox from '../../assets/images/box.svg'
 
+import { actionCreatorDeleteProductByBasket } from './reducerCatalog'
+
 const initialState = {
     total: 0,
     totalWithotDiscount: 0,
@@ -25,8 +27,20 @@ const DELETE_PRODUCT = "DELETE_PRODUCT"
 const CHANGE_COUNT_PRODUCT = "CHANGE_COUNT_PRODUCT"
 const DELETE_ALL_SELECTED = "DELETE_ALL_SELECTED"
 
+const ADD_PRODUCT_TO_BASKET = "ADD_PRODUCT_TO_BASKET"
+
 const reducerBasket = (state = initialState, action) => {
     switch (action.type) {
+        case ADD_PRODUCT_TO_BASKET: {
+            return {
+                ...state,
+                basket: [
+                    ...state.basket,
+                    action.product
+                ]
+            }
+        }
+
         case DELETE_ALL_SELECTED: {
             return {
                 ...state,
@@ -177,6 +191,7 @@ const actionCreatorDeleteProduct = (id) => ({ type: DELETE_PRODUCT, id })
 
 export const thunkCreatorDeleteProduct = (id) => async (dispatch) => {
     dispatch(actionCreatorDeleteProduct(id))
+    dispatch()
 }
 
 export const actionCreatorChangeCountProduct = (id, newCount) => ({ type: CHANGE_COUNT_PRODUCT, id, newCount })
@@ -185,4 +200,20 @@ const actionCreatorDeleteAllSelected = () => ({ type: DELETE_ALL_SELECTED })
 
 export const thunkCreatorBuyProducts = (arrId) => async (dispatch) => {
     dispatch(actionCreatorDeleteAllSelected())
+    arrId.forEach(id => {
+        dispatch(actionCreatorDeleteProductByBasket(id)) //из каталога
+    })
 } 
+
+export const actioncreatorAddProductToBasket = ({id, img, name, price, priceWithoutDiscount}) => ({
+    type: ADD_PRODUCT_TO_BASKET,
+    product: {
+        id, 
+        img, 
+        name, 
+        price, 
+        priceWithoutDiscount,
+        count: 1,
+        isSelected: false
+    }
+})

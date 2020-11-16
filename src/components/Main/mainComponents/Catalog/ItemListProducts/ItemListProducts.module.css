@@ -1,0 +1,86 @@
+.product {
+    width: 190px;
+    height: 280px;
+    box-sizing: border-box;
+    background: #EBEDFA;
+    border-radius: 8px;
+    margin: 12px 24px 12px 0;
+    font-weight: 550;
+}
+
+.image, .image img {
+    width: 190px;
+    height: 190px;
+}
+
+.name {
+    color: #232230;
+    font-size: 1.2rem;
+    grid-area: n;
+}
+
+.price {
+    color: #232230;
+    font-size: 1.3rem;
+    grid-area: p;
+}
+
+.priceWithoutDiscount {
+    color: #A4A3B5;
+    text-decoration-line: line-through;
+    grid-area: d;
+}
+
+.addToBasket {
+    outline: none;
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
+    border-radius: 5px;
+    color: #6977DF;
+    font-size: 1rem;
+    padding: 9px 0;
+    grid-area: b;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    margin-left: 9px;
+}
+
+.addToBasket:not(.is_added) {
+    cursor: pointer;
+}
+
+.data {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "n n"
+        "d b"
+        "p b";
+    margin: 10px 5px 10px 6px;
+}
+
+@media (max-width: 1090px) {
+    .product {
+        width: 150px;
+        height: 240px;
+    }
+    
+    .image, .image img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .name {
+        font-size: 1rem;
+    }
+    
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .addToBasket ,
+    .priceWithoutDiscount {
+        font-size: 0.9rem;
+    }
+}
