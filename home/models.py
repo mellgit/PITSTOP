@@ -60,3 +60,14 @@ car – объект машины содержащий (--> сделан для 
 -->description – (string) описание
 
 """
+
+
+class Products(models.Model):
+    id = models.IntegerField(primary_key=True, unique=True, auto_created=True, null=False, default=0)
+    brand = models.CharField(max_length=20)
+    normalized_manufacturer_code = models.CharField(max_length=20)
+    name = models.CharField(max_length=64)
+    ARMTEC_code = models.CharField(max_length=20)
+    manufacturer_code = models.CharField(max_length=20)
+    amount = models.CharField(max_length=20)
+    price_with_dot = models.FloatField(max_length=20)
