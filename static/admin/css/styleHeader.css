@@ -1,0 +1,79 @@
+.body {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    height: 50px;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom {
+    padding: 6px 20px;
+    background-color: #6D7189;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.bottomSearch {
+    margin-top: auto;
+    margin-right: auto;
+    background-color: #000000;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    width: var(--height-input-style);
+    height: var(--height-input-style);
+}
+
+:root {
+    --height-input-style: 24pt;
+}
+
+.inputStyle {
+    /*background-color: #6D7189;*/
+    display: flex;
+    margin: 1px;
+    padding: 1px;
+    height: var(--height-input-style);
+    width: 519px;
+    padding: 2px 6px;
+}
+
+.inputLine {
+    border: none;
+    outline: none;
+    background-color: #6D7189;
+    color: white;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 2px 6px;
+}
+
+.selectStryle {
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.select select{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border: none;
+    color: white;
+    height: 100%;
+}
+.menu{
+    display: grid;
+    grid-template-rows: 50px 50px;
+}
+.bottomMenu{
+    background-color: #6D7189;
+}

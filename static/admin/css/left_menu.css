@@ -1,0 +1,19 @@
+.left_menu {
+    background-color: #C4C4C4;
+    padding: 10px 7px 10px 9px;
+}
+
+.left_menu_search {
+    display: flex;
+}
+
+.left_menu_search input {
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+.left_menu_search img {
+    cursor: pointer;
+}
+

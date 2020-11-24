@@ -1,0 +1,29 @@
+/*Никита*/  
+
+table{
+    width: 830px;
+    border-collapse: collapse;
+    font-size: 1rem;
+    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
+}
+th {
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid #000000;
+    padding: 10px 8px;
+  }
+  td {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 9px 8px;
+    transition: .3s linear;
+    border-bottom: 1px solid #ccc;
+  }
+  tr:hover td {background-color: #C4C4C4;}
+
+
+/* прячем input checkbox */
+input[type="checkbox"] {
+    display: none;
+  }
+  
