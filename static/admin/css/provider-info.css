@@ -1,0 +1,100 @@
+.background-panel {
+	display: flex;
+	flex-direction: row;
+	width: 830px;
+	height: 70px;
+	background: #C4C4C4;
+	margin-left: 16px;
+	padding-left: 8px;
+	padding-top: 8px;
+	border-radius: 0 0 10px 10px;
+}
+.provider-name{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 100%;
+}
+
+.btn_wrap {
+	margin-top: 4px;
+}
+
+.btn_wrap > :first-child {
+	margin-right: 8px;
+}
+
+.btn{
+	font-family: Roboto;
+	font-style: normal;
+	font-size: 0.8rem;
+	width: 90px;
+	height: 18px;
+	color: black;
+	border: none;
+	outline: none;
+	background-color: white;
+}
+.btn:active{
+	background-color: black;
+	color: white;
+}
+
+.notification{
+	margin-left: 10px;
+	width: 26px;
+	height: 24px;
+	border-radius: 4px;
+	background-color: white;
+	background-size: 100% 100%;
+	background-position: center;
+	background-image: url("../images/notify.svg");
+}
+.prov_info{
+	width: 150px;
+	height: 48px;
+	background-color: #6D7189;
+	margin-left: 18px;
+	border-radius: 4px;
+	font-family: Roboto;
+	font-style: normal;
+	font-size: 0.8rem;
+	text-align: center;
+}
+.info_element{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left:5px;
+	font-family: Roboto;
+	font-style: normal;
+	font-size: 0.6rem;
+	text-align: left;
+}
+
+.info_element > :nth-child(n) {
+	margin-right: 5px;
+}
+
+.btn_wrap {
+	display: flex;
+}
+
+.btn_copy:first-child {
+	margin-right: 5px;
+}
+
+.btn_copy{
+	width: 20px;
+	height: 20px;
+	background-color: #C590EF;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.btn_copy,
+.btn_copy img {
+	border-radius: 100%;
+}

@@ -11,6 +11,7 @@ from json import loads
 def api(request):
 
     if request.method == 'POST':
+        print(request.body)
         data = loads(request.body)
         print(data['login'])
         print(data['password'])

@@ -8,6 +8,7 @@
     {% load static %}
 
     <link rel="stylesheet" href="{% static 'admin/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/provider-info.css' %}">
     <link rel="stylesheet" href="{% static 'admin/css/table-mistakes.css' %}">
     <link rel="stylesheet" href="{% static 'admin/css/left_menu.css' %}">
     <link rel="stylesheet" href="{% static 'admin/css/styleHeader.css'%}">
@@ -24,6 +25,7 @@
         {% include 'admin/left_menu.html' %}
 
         <div class="content">
+            {% include 'admin/provider-info.html' %}
             {% include 'admin/table-mistakes.html' %}
         </div>
     </main>

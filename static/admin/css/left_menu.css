@@ -3,6 +3,10 @@
     padding: 10px 7px 10px 9px;
 }
 
+.left_menu > :nth-child(n):not(:last-child) {
+    margin-bottom: 4px;
+}
+
 .left_menu_search {
     display: flex;
 }
@@ -15,5 +19,9 @@
 
 .left_menu_search img {
     cursor: pointer;
+    background-color: black;
 }
 
+.tools {
+    background: #8D91A5;
+}

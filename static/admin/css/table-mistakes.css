@@ -1,29 +1,94 @@
-/*Никита*/  
+/*Никита*/
 
-table{
-    width: 830px;
-    border-collapse: collapse;
-    font-size: 1rem;
-    font-family: Roboto,'Open Sans', 'Helvetica Neue', sans-serif;
+.delete_all{
+  border-radius: 20%;
 }
+
+table {
+  width: 830px;
+  border-collapse: collapse;
+  font-size: 1rem;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-left: 16px;
+}
+
 th {
-    font-weight: normal;
-    color: rgb(0, 0, 0);
-    border-bottom: 2px solid #000000;
-    padding: 10px 8px;
-  }
-  td {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    padding: 9px 8px;
-    transition: .3s linear;
-    border-bottom: 1px solid #ccc;
-  }
-  tr:hover td {background-color: #C4C4C4;}
+  font-weight: normal;
+  color: rgb(0, 0, 0);
+  border-bottom: 2px solid #000000;
+  padding: 10px 8px;
+}
 
+td {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding: 9px 8px;
+  transition: .3s linear;
+  border-bottom: 1px solid #ccc;
+}
 
-/* прячем input checkbox */
-input[type="checkbox"] {
-    display: none;
-  }
-  
+tr:hover td {
+  background-color: #C4C4C4;
+}
+
+.custom-checkbox__margin {
+  margin-right: 5px;
+}
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox>span {
+  width: 16x;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox>span::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background-color: white;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+  border-color: #ffffff;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox>input:not(:disabled):active+span::before {
+  background-color: #0b76ef;
+  border-color:  #0b76ef;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox>input:checked+span::before {
+  background-image: url("../images/tick.svg");
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-size: 120% 120%;
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox>input:disabled+span::before {
+  background-color: #e9ecef;
+}
