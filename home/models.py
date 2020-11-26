@@ -90,3 +90,25 @@ class Order(models.Model):
 class CarOrder(models.Model):
     id_car = models.IntegerField()
     id_order = models.IntegerField()
+
+
+# id
+# адрес
+# имя
+# телефон
+# email (почта для приёма)
+# contancts
+# заметка
+
+class Provider(models.Model):
+    address = models.CharField(max_length=64)
+    name = models.CharField(max_length=32)
+    phone = models.CharField(max_length=12)
+    email = models.CharField(max_length=64)
+    email_contacts = models.CharField(max_length=64)
+    note = models.CharField(max_length=300)
+
+
+class ProviderProduct(models.Model):
+    id_provide = models.IntegerField()
+    id_product = models.IntegerField()

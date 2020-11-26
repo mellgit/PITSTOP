@@ -18,13 +18,8 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
 
-                <div class="three-colums"><!--заменить на элемент html-->
-                    <div class="search-settings">
-                        <input type="text" placeholder="заменить">
-                    
-                    </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                <div >
+                    {% include 'admin/template_settings.html' %}
                 </div>
 
                 <div class="two-colums">
@@ -42,13 +37,8 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
 
-                <div class="three-colums"><!--заменить на элемент html-->
-                    <div class="search-settings">
-                        <input type="text" placeholder="заменить">
-                       
-                    </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                <div >
+                    {% include 'admin/template_settings.html' %}
                 </div>
 
                 <div class="two-colums">
@@ -57,13 +47,8 @@
                     <button class="btn" style="background: #C4C4C4;">Добавить</button>
                 </div>
 
-                <div class="three-colums"><!--изменить-->
-                    <div class="search-settings">
-                        <input type="text" placeholder="заметки">
-                       
-                    </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                <div >
+                    {% include 'admin/template_settings.html' %}
                 </div>
 
                 <div class="two-colums">
@@ -81,13 +66,8 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
 
-                <div class="three-colums"><!--заменить на элемент html-->
-                    <div class="search-settings">
-                        <input type="text" placeholder="заменить">
-                        
-                    </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                <div >
+                    {% include 'admin/template_settings.html' %}
                 </div>
 
                 <div class="two-colums">
@@ -105,13 +85,8 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
 
-                <div class="three-colums"><!--заменить на элемент html-->
-                    <div class="search-settings">
-                        <input type="text" placeholder="заменить">
-                        
-                    </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                <div >
+                    {% include 'admin/template_settings.html' %}
                 </div>
             </div>
             <div>
@@ -135,9 +110,13 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
+                <div >
+                    {% include 'admin/template_settings.html' %}
+                </div>
                 <div class="text-margin">
                     Название файла
                 </div>
+                
                 <div class="three-colums">
                     <div class="search-settings">
                         <input type="text" placeholder="Название">
@@ -146,6 +125,7 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
+
                 <div class="text-margin">
                     Название поля "Бренд"
                 </div>
@@ -219,6 +199,7 @@
                     <div class="search-settings">
                         <input type="text" placeholder="Бренд">
                     </div>
+                    <div><br></div>
                     <div class="search-settings">
                         <input type="text" placeholder="Артикул">
                     </div>
@@ -229,7 +210,6 @@
                 <div class="text-margin">
                     Уже исключенные
                 </div>
-
         </div>
     </div>
 </div>
