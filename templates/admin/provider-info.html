@@ -2,7 +2,7 @@
 
 <div class="background-panel">
     <div>
-        <p class="provider-name">Название<br>поставщика</br></p>
+        <p class="provider-name">{{ provider.name }}</p>
         <div class="btns">
             <button class="btn">Заметка</button>
             <button class="btn">Настройки</button>
@@ -14,45 +14,45 @@
     <div class="prov_info">
         Адреса
         <div class="info_element">
-            Г.Москва,ул. Улица,офис 3
+            {{ provider.address }}
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
             </div>
         </div>
-            <button class="btn" style="margin: 3px 0;">Еще</button>
+        <div class="btn_still">Еще</div>
     </div>
     <div class="prov_info">
         Телефон
         <div class="info_element">
-            89999999999
+            {{ provider.phone }}
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
             </div>
         </div>
-        <button class="btn" style="margin: 3px 0;">Еще</button>
+        <div class="btn_still">Еще</div>
     </div>
     <div class="prov_info">
         email
         <div class="info_element">
-            emai@email.ru
+            {{ provider.email }}
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
             </div>
         </div>
-        <button class="btn" style="margin: 3px 0;">Еще</button>
+        <div class="btn_still">Еще</div>
     </div>
     <div class="prov_info">
         Контактные лица
         <div class="info_element">
-            emai@email.ru
+            {{ provider.email_contacts }}
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
             </div>
         </div>
-        <button class="btn" style="margin: 3px 0;">Еще</button>
+        <div class="btn_still">Еще</div>
     </div>
 </div>

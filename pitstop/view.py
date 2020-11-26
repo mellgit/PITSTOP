@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-from home.models import Client, Garage, Car, CarOrder, Order, Provider, ProviderProduct
+from home.models import Client, Garage, Car, CarOrder, Order, Provider, ProviderProduct, Product
 import json
 
 
@@ -19,11 +19,14 @@ def admin_panel_brand(request, id_provider):
     brands = []
 
     for provider_product in ProviderProduct.objects.filter(id_provide=id_provider):
-        print()
+        product = Product.objects.get(id=provider_product.id_product)
+
+        brands = add_brand_to_brands(brands, product.brand)
 
     data = {
         'provider': get_provider_data(provider),
-        'brands': brands
+        'brands': brands,
+        'arr_providers': get_arr_provider()
     }
 
     return render(request, 'admin/main_brands.html', data)
@@ -46,3 +49,29 @@ def get_provider_data(provider):
         'email_contacts': provider.email_contacts,
         'note': provider.note
     }
+
+
+def add_brand_to_brands(arr_brands, brand):
+    for i in range(len(arr_brands)):
+        if arr_brands[i]['brand'] == brand:
+            arr_brands[i]['count'] += 1
+            return arr_brands
+
+    arr_brands.append({
+        'brand': brand,
+        'count': 1
+    })
+    return arr_brands
+
+
+def get_arr_provider():
+    arr_providers = []
+
+    for p in Provider.objects.all():
+        arr_providers.append({
+                'id': p.id,
+                'name': p.name,
+                'has_error': p.has_error
+        })
+
+    return arr_providers

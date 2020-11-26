@@ -1,5 +1,15 @@
 {% load static %}
-<table class="brands_table">
+
+<div class="table_brands">
+    {% for b in brands %}
+        <div class="brands_elem">
+            <div class="brands_name">{{ b.brand }}</div>
+            <div class="brands_value">{{ b.count }}</div>
+        </div> 
+    {% endfor %}
+</div>
+
+<!-- <table class="brands_table">
     <th class="brands_th"></th>
     <th class="brands_th_pass"></th>
     <th class="brands_th"></th>
@@ -85,4 +95,4 @@
     </tr> 
 
 
-</table>
+</table> -->

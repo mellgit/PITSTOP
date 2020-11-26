@@ -53,13 +53,12 @@ car – объект машины содержащий (--> сделан для 
 """
 
 
-class Products(models.Model):
+class Product(models.Model):
     id = models.IntegerField(primary_key=True, unique=True, auto_created=True, null=False, default=0)
     brand = models.CharField(max_length=20)
     normalized_manufacturer_code = models.CharField(max_length=20)
     name = models.CharField(max_length=64)
     ARMTEC_code = models.CharField(max_length=20)
-    manufacturer_code = models.CharField(max_length=20)
     amount = models.CharField(max_length=20)
     price_with_dot = models.FloatField(max_length=20)
 
@@ -107,8 +106,14 @@ class Provider(models.Model):
     email = models.CharField(max_length=64)
     email_contacts = models.CharField(max_length=64)
     note = models.CharField(max_length=300)
+    has_error = models.BooleanField()
 
 
 class ProviderProduct(models.Model):
     id_provide = models.IntegerField()
     id_product = models.IntegerField()
+
+
+class Config(models.Model):
+    name = models.CharField(max_length=32)
+

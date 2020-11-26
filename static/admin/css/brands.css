@@ -22,3 +22,12 @@
 .brands_value{
     text-align: center;
 }
+
+
+.table_brands {
+    margin: 20px 0;   
+    margin-left: -7px;
+    width: 884px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}

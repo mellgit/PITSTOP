@@ -1,9 +1,18 @@
 .supplier{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background: #8D91A5;
     height: 20px;
     margin: 8px 0px;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.supplier > :first-child{
+    transform: translateY(2px);
+}
+.supplier_left{
+    display:flex;
+    align-items: center;
 }
 .supplier > img {
     margin: 2px 0 0;
@@ -12,4 +21,10 @@
 }
 .supplier > :first-child{
     margin-right: 2px;
+}
+.supplier_a{
+    display:flex;
+    align-items: center;
+    font-size: 15px;
+    margin-left: 22px;
 }

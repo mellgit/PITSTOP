@@ -38,6 +38,7 @@
 	outline: none;
 	background-color: white;
 	cursor: pointer;
+	margin-top: 10px;
 }
 .btn:active{
 	background-color: black;
@@ -51,8 +52,8 @@
 	background-color: white;
 }
 .prov_info{
-	/*display: flex;
-	flex-direction: column;*/
+	display: flex;
+	flex-direction: column;
 	width: 220px;
 	height: 60px;
 	background-color: #6D7189;
@@ -90,8 +91,6 @@
 }
 
 .btn_copy{
-	width: 20px;
-	height: 20px;
 	background-color: #C590EF;
 	border: none;
 	outline: none;
@@ -101,4 +100,29 @@
 .btn_copy,
 .btn_copy img {
 	border-radius: 100%;
+	width: 16px;
+	height: 16px;
+}
+
+.btn_still{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 14px;
+	background-color: white;
+	font-family: Roboto;
+	font-style: normal;
+	font-size: 0.75rem;
+	text-align: center;
+	margin: auto;
+	margin-top: 6px;
+	border-radius: 10px;
+}
+.btn_still:hover{
+	cursor: pointer;
+}
+.btn_still:active{
+	background-color: black;
+	color:white;
 }

@@ -1,5 +1,11 @@
 {% load static %}
-    <div class="supplier">
-        <label class="custom-checkbox" style="margin: 2px 0 0;"> <input type="checkbox" value="value-1"><span></span></label>
-        <a style="margin: 2px 24px 0 0px; font-size: 15px;">Название поставщика</a>
+
+    {% for p in arr_providers %}
+    <div class="supplier" data-id="{{ p.id }}">
+        <div class="supplier_left">
+            <label class="custom-checkbox" > <input type="checkbox" value="value-1"><span></span></label>
+            <a class="supplier_a">{{ p.name }}</a>
+        </div>
+        <img class="img_bottom_bar" src="{% static 'admin/images/notify.svg' %}" alt="loop">
     </div>
+    {% endfor %}

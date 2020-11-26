@@ -29,6 +29,13 @@ def decode_zip_file(zip_file):
     return foofile.read()
 
 
+def has_error(field):
+    if field == "":
+        return "Ошибка"
+
+    return field
+
+
 def print_data_excel_file(blob_file, cursor, connect):
     excel_file = pandas.ExcelFile(blob_file)
 
@@ -46,13 +53,17 @@ def print_data_excel_file(blob_file, cursor, connect):
             else:
                 id_product += 1
 
-            brand = str(sheet["Бренд"][index_row])
-            normalized_manufacturer_code = str(sheet["Нормированный код производителя"][index_row])
-            name = str(sheet["Наименование"][index_row])
-            ARMTEC_code = str(sheet["Код АРМТЕК"][index_row])
-            manufacturer_code = str(sheet["Код производителя"][index_row])
-            amount = str(sheet["Количество"][index_row])
-            price_with_dot = str(sheet["Цена с точкой"][index_row])
+            brand = has_error(str(sheet["Бренд"][index_row]))
+            normalized_manufacturer_code = has_error(str(sheet["Нормированный код производителя"][index_row]))
+            name = has_error(str(sheet["Наименование"][index_row]))
+            ARMTEC_code = has_error(str(sheet["Код АРМТЕК"][index_row]))
+            manufacturer_code = has_error(str(sheet["Код производителя"][index_row]))
+            amount = has_error(str(sheet["Количество"][index_row]))
+            price_with_dot = has_error(str(sheet["Цена с точкой"][index_row]))
+
+            if has_error(brand, normalized_manufacturer_code,
+                         name, ARMTEC_code, manufacturer_code, amount, price_with_dot):
+                print('error')
 
             # cursor.execute("INSERT INTO 'home_products' VALUES ("
             #                + str(id_product) + ", '" + brand

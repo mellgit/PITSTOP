@@ -7,7 +7,8 @@
                 <div class="two-colums">
                     <a>Телефоны</a>
                     <a><br></a>
-                    <button class="btn" style="background: #C4C4C4;">Добавить</button>
+                    
+                    <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
 
                 <div class="three-colums">
@@ -17,17 +18,18 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
-
-                <div >
+                {% include 'admin/template_settings1.html' %}
+                <!--<div  class="scroll">
                     {% include 'admin/template_settings.html' %}
-                </div>
+                </div>-->
 
                 <div class="two-colums">
                     <a>email-ы</a>
                     <a><br></a>
-                    <button class="btn" style="background: #C4C4C4;">Добавить</button>
+                   
+                    <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
-
+                
                 <div class="three-colums">
                     <div class="search-settings">
                         <input type="text" placeholder="email">
@@ -36,25 +38,27 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
-
-                <div >
+                {% include 'admin/template_settings3.html' %}
+                <!--<div  class="scroll">
                     {% include 'admin/template_settings.html' %}
-                </div>
+                </div>-->
 
                 <div class="two-colums">
                     <a>Заметка</a>
                     <a><br></a>
-                    <button class="btn" style="background: #C4C4C4;">Добавить</button>
+                    
+                   <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
-
-                <div >
+                {% include 'admin/template_settings2.html' %}
+                <!--<div  class="scroll">
                     {% include 'admin/template_settings.html' %}
-                </div>
+                </div>-->
 
                 <div class="two-colums">
                     <a>Контактные лица</a>
                     <a><br></a>
-                    <button class="btn" style="background: #C4C4C4;">Добавить</button>
+                    
+                    <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
 
                 <div class="three-colums">
@@ -65,15 +69,15 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
-
-                <div >
+                {% include 'admin/template_settings5.html' %}
+                <!--<div  class="scroll">
                     {% include 'admin/template_settings.html' %}
-                </div>
+                </div>-->
 
                 <div class="two-colums">
                     <a>Адреса</a>
                     <a><br></a>
-                    <button class="btn" style="background: #C4C4C4;">Добавить</button>
+                    <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
 
                 <div class="three-colums">
@@ -84,10 +88,17 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
-
-                <div >
-                    {% include 'admin/template_settings.html' %}
+                <div>
+                {% include 'admin/template_settings.html' %}
                 </div>
+                <!--<div class="scroll">
+                    {% include 'admin/template_settings.html' %}
+                    {% include 'admin/template_settings.html' %}
+                    {% include 'admin/template_settings.html' %}
+                    {% include 'admin/template_settings.html' %}
+                    {% include 'admin/template_settings.html' %}
+                    {% include 'admin/template_settings.html' %}
+                </div>-->
             </div>
             <div>
                 <br>
@@ -110,9 +121,7 @@
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
-                <div >
-                    {% include 'admin/template_settings.html' %}
-                </div>
+               
                 <div class="text-margin">
                     Название файла
                 </div>
@@ -199,7 +208,6 @@
                     <div class="search-settings">
                         <input type="text" placeholder="Бренд">
                     </div>
-                    <div><br></div>
                     <div class="search-settings">
                         <input type="text" placeholder="Артикул">
                     </div>
@@ -210,6 +218,13 @@
                 <div class="text-margin">
                     Уже исключенные
                 </div>
+                {% include 'admin/block_template.html' %}
+               <!-- <div  class="scroll" style="height: 180px;">
+                    {% include 'admin/block_template.html' %}
+                </div>-->
+        </div>
+        <div>
+            <button class="btn_copy_setting" style="margin: 5px;"><img width="20" height="20" src="{% static 'admin/images/close.svg' %}"></img> </button>
         </div>
     </div>
 </div>
