@@ -17,11 +17,13 @@
 	line-height: 100%;
 }
 
-.btn_wrap {
+.btns {
+	display: flex;
+	flex-direction: row;
 	margin-top: 4px;
 }
 
-.btn_wrap > :first-child {
+.btns > :first-child {
 	margin-right: 8px;
 }
 
@@ -35,6 +37,7 @@
 	border: none;
 	outline: none;
 	background-color: white;
+	cursor: pointer;
 }
 .btn:active{
 	background-color: black;
@@ -42,25 +45,26 @@
 }
 
 .notification{
-	margin-left: 10px;
-	width: 26px;
+	width: 24px;
 	height: 24px;
 	border-radius: 4px;
 	background-color: white;
-	background-size: 100% 100%;
-	background-position: center;
-	background-image: url("../images/notify.svg");
 }
 .prov_info{
-	width: 150px;
-	height: 48px;
+	/*display: flex;
+	flex-direction: column;*/
+	width: 220px;
+	height: 60px;
 	background-color: #6D7189;
-	margin-left: 18px;
+	margin-left: 14px;
 	border-radius: 4px;
 	font-family: Roboto;
 	font-style: normal;
 	font-size: 0.8rem;
 	text-align: center;
+}
+.background-panel>:last-child{
+	margin-right: 14px;
 }
 .info_element{
 	display: flex;

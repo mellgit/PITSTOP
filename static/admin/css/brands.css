@@ -1,0 +1,24 @@
+.brands_table{
+    width: 838px;
+    margin-left: 16px;
+}
+.brands_th{
+    width: 130px;
+    height: 10px;
+}
+.brands_th_pass{
+    width: 45px;
+}
+.brands_elem{
+    height: 40px;
+    width: 130px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #C4C4C4;
+}
+.brands_name{
+    text-align: center;
+}
+.brands_value{
+    text-align: center;
+}

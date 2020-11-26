@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 
 # создание модели api в бд, после чего мигрируем модель в бд
+
 class Client(models.Model):
     login = models.CharField(max_length=150, unique=True)
     password = models.CharField(max_length=50)
@@ -13,23 +14,13 @@ class Client(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=150)
     isSMSsendingincluded = models.BooleanField()
-    office = models.IntegerField(max_length=4)
-    profile = models.IntegerField(max_length=10)
-    
+    office = models.IntegerField()
+    profile = models.IntegerField()
+    discount = models.IntegerField()
+    id_garage = models.IntegerField(unique=True, null=False)
+
     def __str__(self):
         return f"{self.login}"
-
-class Car(models.Model):
-    typeCode = models.CharField(max_length=20)
-    code = models.CharField(max_length=20)
-    year = models.CharField(max_length=20)
-    mark = models.CharField(max_length=20)
-    model = models.IntegerField(max_length=20)
-    modification = models.IntegerField(max_length=20)
-    licensePlate = models.CharField(max_length=20)
-    mileage = models.IntegerField(max_length=20)
-    description = models.TextField(max_length=300)
-    adding_client = models.ForeignKey(Client, on_delete=models.CASCADE)
 
 """
     ./manage.py makemigrations - занесение в бд
@@ -71,3 +62,31 @@ class Products(models.Model):
     manufacturer_code = models.CharField(max_length=20)
     amount = models.CharField(max_length=20)
     price_with_dot = models.FloatField(max_length=20)
+
+
+class Garage(models.Model):
+    id_garage = models.IntegerField()
+    id_car = models.IntegerField()
+
+
+class Car(models.Model):
+    brand = models.CharField(max_length=64)
+    model = models.CharField(max_length=64)
+    yearOfIssue = models.CharField(max_length=4)
+    modification = models.CharField(max_length=64)
+    mileage = models.IntegerField()
+    licensePlate = models.CharField(max_length=64)
+    typeCode = models.CharField(max_length=10)
+    code = models.CharField(max_length=32)
+    name = models.CharField(max_length=32)
+
+
+class Order(models.Model):
+    img = models.ImageField(upload_to="static/product_img/", blank=True)
+    name = models.CharField(max_length=20)
+    status = models.CharField(max_length=32)
+
+
+class CarOrder(models.Model):
+    id_car = models.IntegerField()
+    id_order = models.IntegerField()

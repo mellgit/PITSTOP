@@ -22,6 +22,7 @@ from pitstop import view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')), # перейти по ссылке home в приложение home
-    re_path(r'admin_panel/', view.admin_panel),
+    re_path(r'admin_panel/brands', view.admin_panel_brand),
+    re_path(r'admin_panel/table', view.admin_panel_table),
     re_path(r'^', view.home)
 ]

@@ -18,5 +18,10 @@ from .views import *
     some-title заноситься в список urlpatterns
 """
 urlpatterns = [
-    path('', api, name='api')
+    path('auth/', auth, name='auth'),
+    path('get_user_date/', get_user_date),
+    path('get_garage/', get_garage),
+    path('add_car/', add_car),
+    path('delete_car/', delete_car),
+    path('change_car/', change_car)
 ]

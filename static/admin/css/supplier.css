@@ -1,0 +1,15 @@
+.supplier{
+    display: flex;
+    justify-content: space-evenly;
+    background: #8D91A5;
+    height: 20px;
+    margin: 8px 0px;
+}
+.supplier > img {
+    margin: 2px 0 0;
+    background: #C590EF;
+    cursor: pointer;
+}
+.supplier > :first-child{
+    margin-right: 2px;
+}

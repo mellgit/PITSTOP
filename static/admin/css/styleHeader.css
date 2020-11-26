@@ -70,10 +70,13 @@
     color: white;
     height: 100%;
 }
+
 .menu{
     display: grid;
     grid-template-rows: 50px 50px;
 }
+
 .bottomMenu{
     background-color: #6D7189;
 }
+

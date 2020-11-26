@@ -1,0 +1,9 @@
+.back{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+.sub_back{
+    width: 800px;
+    height: 500px;
+    margin: auto;
+}

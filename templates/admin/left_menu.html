@@ -5,7 +5,16 @@
         <input type="text" placeholder="Поиск">
         <img src="{% static 'admin/images/loop.svg' %}" alt="loop">
     </div>
+    
     <div class="tools">
         <label class="custom-checkbox"> <input type="checkbox" value="value-1"><span></span></label>
+        <img class="img_bottom_bar_sort" src="{% static 'admin/images/sort.svg' %}" alt="loop">
+        <img class="img_bottom_bar" src="{% static 'admin/images/add.svg' %}" alt="loop">
+        <img class="img_bottom_bar" src="{% static 'admin/images/settings.svg' %}" alt="loop">
+        <img class="img_bottom_bar" src="{% static 'admin/images/garbage.svg' %}" alt="loop">
     </div>
+    <div>
+    {% include 'admin/supplier-wrong.html' %}
+    {% include 'admin/supplier.html' %}
+</div>
 </div>

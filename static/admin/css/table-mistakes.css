@@ -4,7 +4,7 @@
   border-radius: 20%;
 }
 
-table {
+.mistakes_table {
   width: 830px;
   border-collapse: collapse;
   font-size: 1rem;
@@ -12,14 +12,14 @@ table {
   margin-left: 16px;
 }
 
-th {
+.mistakes_th {
   font-weight: normal;
   color: rgb(0, 0, 0);
   border-bottom: 2px solid #000000;
   padding: 10px 8px;
 }
 
-td {
+.mistakes_td {
   text-align: center;
   color: rgb(0, 0, 0);
   padding: 9px 8px;
@@ -27,7 +27,8 @@ td {
   border-bottom: 1px solid #ccc;
 }
 
-tr:hover td {
+
+.mistakes_tr:hover td {
   background-color: #C4C4C4;
 }
 

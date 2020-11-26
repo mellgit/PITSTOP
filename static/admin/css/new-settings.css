@@ -1,0 +1,105 @@
+.new-settings-colums{
+    display: grid;
+    grid-template-columns: 49% 49%;
+    width: 900px;
+    margin: 2% 2%;
+}
+
+.first-colum{
+    background: #ffffff;
+    margin: 2%;
+}
+
+.second-colum{
+    background: #ffffff;
+    margin: 2%;
+}
+
+.back{
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+}
+
+.head-settings{
+    width: 220px;
+    background: #C4C4C4;
+}
+
+.head-mardgin > :first-child{
+    margin-left: 100px;
+}
+
+.two-colums{
+    display: grid;
+    grid-template-columns: 33% 22% 33%;
+    margin: 10px 40px 10px 90px;
+}
+
+.three-colums{
+    display: grid;
+    grid-template-columns: 69% 6% 10%;
+}
+
+.three-colums > button > :first-child{
+  margin-right: auto;
+}
+
+.head-settings{
+    margin: 10px;
+    text-align: center;
+}
+
+.search-settings {
+    display: flex;
+    margin: 5px 5px 5px 90px;
+    
+}
+
+.search-settings input {
+    outline: none;
+    border: none;
+    text-align: center;
+    background: #C4C4C4;
+}
+
+.search-settings img {
+    cursor: pointer;
+    background-color: black;
+}
+
+.btn_copy_setting{
+	width: 20px;
+	height: 20px;
+	background-color: #C590EF;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.text-margin{
+    margin-left: 90px;
+}
+
+.select-settings select{
+    width: 150px;
+    height: 100%;
+    background-color: #C4C4C4;
+    border: none;
+    color: black;
+    height: 100%;
+    margin-left: 90px;
+}
+.write-colums{
+    
+    display: grid;
+    grid-template-columns: 19% 60% 15% ;
+
+}
+
+.write-colums > :first-child > input{
+    width: 80px;
+}
+
+.write-colums > :last-child > input{
+    width: 120px;
+}
