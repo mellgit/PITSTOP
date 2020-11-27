@@ -3,18 +3,20 @@
 <div class="background-panel">
     <div>
         <p class="provider-name">{{ provider.name }}</p>
-        <div class="btns">
-            <button class="btn">Заметка</button>
-            <button class="btn">Настройки</button>
+        <div class="btns-left">
+            <button id="open_note" class="btn">Заметка</button>
+            <button id="open_settings" class="btn">Настройки</button>
         </div>
     </div>
 
-    <div class="notification"><img class="notification" src="{% static 'admin/images/notify.svg' %}" alt="loop"></div>
+    <a class="notification" href="/admin_panel/table/1">
+        <img class="notification" src="{% static 'admin/images/notify.svg' %}" alt="loop">
+    </a>
 
     <div class="prov_info">
-        Адреса
+        Адрес
         <div class="info_element">
-            {{ provider.address }}
+            <span id="info_element_adres_contacts">{{ provider.address }}</span>
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
@@ -25,7 +27,7 @@
     <div class="prov_info">
         Телефон
         <div class="info_element">
-            {{ provider.phone }}
+            <span id="info_element_phone_contacts">{{ provider.phone }}</span>
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
@@ -36,7 +38,7 @@
     <div class="prov_info">
         email
         <div class="info_element">
-            {{ provider.email }}
+            <span id="info-element__email">{{ provider.email }}</span>
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
@@ -45,9 +47,9 @@
         <div class="btn_still">Еще</div>
     </div>
     <div class="prov_info">
-        Контактные лица
+        Контактное лица
         <div class="info_element">
-            {{ provider.email_contacts }}
+            <span id="info-element__email-contacts">{{ provider.email_contacts }}</span>
             <div class="btns">
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                 <button class="btn_copy"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>

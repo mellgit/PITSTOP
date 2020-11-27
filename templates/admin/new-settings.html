@@ -1,6 +1,6 @@
 {% load static %}
 <div class="back">
-    <div class="new-settings-colums" style="margin-left: 5%;">
+    <div class="new-settings-colums">
         <div class="first-colum">
             <div class="head-mardgin">
                 <div class="head-settings">Название поставщика</div>
@@ -11,13 +11,13 @@
                     <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
 
-                <div class="three-colums">
+                <!-- <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="номер">
+                        <input type="text" placeholder="номер" style="width: 190px;" >
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}" ></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
-                </div>
+                </div> -->
                 {% include 'admin/template_settings1.html' %}
                 <!--<div  class="scroll">
                     {% include 'admin/template_settings.html' %}
@@ -30,14 +30,13 @@
                     <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
                 
-                <div class="three-colums">
+                <!-- <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="email">
-                       
+                        <input type="text" placeholder="email" style="width: 190px;">
                     </div>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
-                </div>
+                </div> -->
                 {% include 'admin/template_settings3.html' %}
                 <!--<div  class="scroll">
                     {% include 'admin/template_settings.html' %}
@@ -61,18 +60,18 @@
                     <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
 
-                <div class="three-colums">
+                <!-- <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Иванов И.И.">
+                        <input type="text" placeholder="Иванов И.И." style="width: 190px;">
                         
                     </div>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
-                </div>
+                </div> -->
                 {% include 'admin/template_settings5.html' %}
-                <!--<div  class="scroll">
-                    {% include 'admin/template_settings.html' %}
-                </div>-->
+{#                <div  class="scroll">#}
+{#                    {% include 'admin/template_settings.html' %}#}
+{#                </div>#}
 
                 <div class="two-colums">
                     <a>Адреса</a>
@@ -80,14 +79,14 @@
                     <!--<button class="btn" style="background: #C4C4C4;">Добавить</button>-->
                 </div>
 
-                <div class="three-colums">
+                <!-- <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Иванов И.И.">
+                        <input type="text" placeholder="Адрес" style="width: 190px;">
                         
                     </div>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
                     <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
-                </div>
+                </div> -->
                 <div>
                 {% include 'admin/template_settings.html' %}
                 </div>
@@ -115,11 +114,11 @@
                 </div>
                 <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Название">
+                        <input type="text" value="{{ provider.mail_for_reception }} " id="input-laer1">
                         
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                    <button id="input-reception"class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button  id="input-del1"class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
                
                 <div class="text-margin">
@@ -128,11 +127,11 @@
                 
                 <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Название">
+                        <input type="text" value="{{ provider.name_file }}" id="input-laer2">
                         
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                    <button id="input-file" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button id="input-del2"class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
 
                 <div class="text-margin">
@@ -140,55 +139,55 @@
                 </div>
                 <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Название">
+                        <input type="text" value="{{ provider.number_brand }}" id="input-laer3">
                         
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                    <button id="input-brand"class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button id="input-del3"class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
                 <div class="text-margin">
                     Название поля "Цена"
                 </div>
                 <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Название">
+                        <input type="text" value="{{ provider.number_price }}" id="input-laer4">
                         
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                    <button id="input-price" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button id="input-del4" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
                 <div class="text-margin">
                     Название поля "Артикул"
                 </div>
                 <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Название">
+                        <input type="text" value="{{ provider.number_vendor_code }}" id="input-laer5">
                         
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                    <button id="input-articul" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button id="input-del5" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
                 <div class="text-margin">
                     Название поля "Наличие"
                 </div>
                 <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Название">
+                        <input type="text" value="{{ provider.number_availability }}" id="input-laer6">
                         
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                    <button id="input-nan" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button id="input-del6" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
                 <div class="text-margin">
                     Название поля "Описание"
                 </div>
                 <div class="three-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Название">
+                        <input type="text" value="{{ provider.number_description }}" id="input-laer7">
                         
                     </div>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
-                    <button class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
+                    <button id="input-description" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/copy.svg' %}"></img> </button>
+                    <button id="input-del7" class="btn_copy_setting"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
                 </div>
                 <div class="text-margin">
                     Частота приема
@@ -206,25 +205,27 @@
                 </div>
                 <div class="write-colums">
                     <div class="search-settings">
-                        <input type="text" placeholder="Бренд">
+                        <input type="text" placeholder="Бренд" id="save_delete_brand">
                     </div>
-                    <div class="search-settings">
-                        <input type="text" placeholder="Артикул">
+                    <div class="search-settings" style="width: 150px">
+                        <input type="text" placeholder="Артикул" id="save_delete_vendor_code">
                     </div>
                     <div>
-                        <button class="btn_copy_setting" style="margin: 5px;"><img width="20" height="20" src="{% static 'admin/images/add.svg' %}"></img> </button>
+                     <!--написать кнопку-->   <button id="save_delete" class="btn_copy_setting" style="margin: 5px;"><img width="20" height="20" src="{% static 'admin/images/add.svg' %}"></img> </button>
                     </div>    
                 </div>
                 <div class="text-margin">
                     Уже исключенные
                 </div>
+                <div id="list_ignores" class="scroll" style="height: 180px;">
                 {% include 'admin/block_template.html' %}
+                </div>
                <!-- <div  class="scroll" style="height: 180px;">
                     {% include 'admin/block_template.html' %}
                 </div>-->
         </div>
         <div>
-            <button class="btn_copy_setting" style="margin: 5px;"><img width="20" height="20" src="{% static 'admin/images/close.svg' %}"></img> </button>
+            <button id="close_settings"class="btn_copy_setting" style="margin: 5px;"><img width="20" height="20" src="{% static 'admin/images/close.svg' %}"></img> </button>
         </div>
     </div>
 </div>

@@ -23,5 +23,9 @@ urlpatterns = [
     path('get_garage/', get_garage),
     path('add_car/', add_car),
     path('delete_car/', delete_car),
-    path('change_car/', change_car)
+    path('change_car/', change_car),
+    path('add_ignore_config/', add_ignore_config),
+    path('delete_ignore/', delete_ignore),
+    path('add_ignore/', add_ignore),
+    path('save_form/', save_form)
 ]

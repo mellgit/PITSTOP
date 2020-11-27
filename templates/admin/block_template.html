@@ -1,12 +1,14 @@
 {% load static %}
+{% for ign in provider.ignore %}
 <div class="write-colums" style="margin-left: 90px;">
-    <div style="background: #c4c4c4;">
-        Бренд
+    <div style="background: #c4c4c4; margin: 5px;" >
+        {{ ign.brand }}
     </div>
-    <div style="background: #c4c4c4;">
-        Артикул
+    <div style="background: #c4c4c4; margin: 5px;">
+        {{ ign.vendor_code }}
     </div>
     <div>
-        <button class="btn_copy_setting" style="margin: 2px;"><img width="20" height="20" src="{% static 'admin/images/add.svg' %}"></img> </button>
+        <button data-id = "{{ ign.id }}" class="btn_delete_ignore btn_copy_setting" style="margin: 2px;"><img width="20" height="20" src="{% static 'admin/images/garbage.svg' %}"></img> </button>
     </div> 
 </div>
+{% endfor %}

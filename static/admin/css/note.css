@@ -1,0 +1,68 @@
+.note_back{
+    display: none;
+    position: absolute;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(2px) contrast(70%);
+    min-height: 100vh 
+}
+.sub_back{
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.note_title{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.9rem;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.note{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+	text-align: center;
+    text-align: left;
+    padding: 10px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #e9ecf7;
+    border-radius: 7px;
+}
+
+.add{
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.garbage{
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.note_close{
+    border:none;
+}
+

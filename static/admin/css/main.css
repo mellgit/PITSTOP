@@ -8,6 +8,12 @@ html {
     font-size: 12pt;
 }
 
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
 main {
     display: grid;
     grid-template-columns: auto 1fr;

@@ -1,6 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-from home.models import Client, Garage, Car, CarOrder, Order
+from home.models import Client, Garage, Car, CarOrder, Order, IgnoreConfig, Provider
 from json import loads
 import json
 
@@ -184,3 +184,85 @@ def save_car(data, car):
     car.licensePlate = data['licensePlate']
     car.typeCode = data['typeCode']
     car.code = data['code']
+
+
+def add_ignore_config(request):
+    data = loads(request.body)
+
+    try:
+        ignore = IgnoreConfig()
+
+        ignore.id_provider = data['id']
+        ignore.brand = data['brand']
+        ignore.vendor_code = data['vendor_code']
+
+        ignore.save()
+    except ObjectDoesNotExist:
+        return HttpResponse("Error")
+
+    return HttpResponse("Ok")
+
+
+def delete_ignore(request):
+    id_ign = loads(request.body)['id']
+
+    try:
+        IgnoreConfig.objects.get(id=id_ign).delete()
+    except ObjectDoesNotExist:
+        return HttpResponse("Error")
+
+    return HttpResponse("Ok")
+
+
+def add_ignore(request):
+    data = loads(request.body)
+
+    ignore = IgnoreConfig()
+
+    ignore.id_provider = data['id_provider']
+    ignore.brand = data['brand']
+    ignore.vendor_code = data['vendor_code']
+
+    ignore.save()
+
+    return HttpResponse(json.dumps(ignore.id))
+
+
+# phone
+# email
+# note
+# email_contact
+# address
+# mail_for_reception
+# name_file
+# number_brand
+# number_availability
+# number_price
+# number_description
+# number_vendor_code
+
+def save_form(request):
+    data = loads(request.body)
+
+    try:
+        provider = Provider.objects.get(id=data['id'])
+
+        provider.phone = data['phone']
+        provider.email = data['email']
+        provider.note = data['note']
+        provider.email_contacts = data['email_contacts']
+        provider.address = data['address']
+        provider.mail_for_reception = data['mail_for_reception']
+        provider.name_file = data['name_file']
+        provider.number_brand = data['number_brand']
+        provider.number_availability = data['number_availability']
+        provider.number_price = data['number_price']
+        provider.number_description = data['number_description']
+        provider.number_vendor_code = data['number_vendor_code']
+
+        provider.save()
+
+    except ObjectDoesNotExist:
+        return HttpResponse("Error")
+
+    return HttpResponse("Ok")

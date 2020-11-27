@@ -1,5 +1,16 @@
 </div>
     </main>
     {% include 'admin/new-settings.html' %}
+    {% include 'admin/note.html' %}
+    
+    {% load static %}
+
+    <script>
+        const id_provider = {{ provider.id }}
+    </script>
+    
+    <script src="{% static 'admin/js/copy_text.js' %}"></script>
+    <script src="{% static 'admin/js/provider_info.js' %}"></script>
+    <script src="{% static 'admin/js/ignore.js' %}"></script>
 </body>
 </html>

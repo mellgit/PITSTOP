@@ -3,16 +3,20 @@
     justify-content: space-between;
     background: #8D91A5;
     height: 20px;
-    margin: 8px 0px;
     padding-right: 6px;
     padding-left: 6px;
-}
-.supplier > :first-child{
-    transform: translateY(2px);
 }
 .supplier_left{
     display:flex;
     align-items: center;
+    flex-direction: row;
+}
+.supplier_left>:first-child{
+    cursor: pointer;
+    margin-top: 2px;
+}
+.supplier_left>:last-child{
+    margin-bottom: 2px;
 }
 .supplier > img {
     margin: 2px 0 0;
@@ -24,7 +28,7 @@
 }
 .supplier_a{
     display:flex;
-    align-items: center;
+    text-align: center;
     font-size: 15px;
     margin-left: 22px;
 }

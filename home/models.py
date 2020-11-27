@@ -56,11 +56,10 @@ car – объект машины содержащий (--> сделан для 
 class Product(models.Model):
     id = models.IntegerField(primary_key=True, unique=True, auto_created=True, null=False, default=0)
     brand = models.CharField(max_length=20)
-    normalized_manufacturer_code = models.CharField(max_length=20)
-    name = models.CharField(max_length=64)
-    ARMTEC_code = models.CharField(max_length=20)
-    amount = models.CharField(max_length=20)
-    price_with_dot = models.FloatField(max_length=20)
+    price = models.FloatField(max_length=20)
+    vendor_code = models.CharField(max_length=20)
+    description = models.CharField(max_length=64)
+    availability = models.CharField(max_length=20)
 
 
 class Garage(models.Model):
@@ -106,7 +105,16 @@ class Provider(models.Model):
     email = models.CharField(max_length=64)
     email_contacts = models.CharField(max_length=64)
     note = models.CharField(max_length=300)
+
     has_error = models.BooleanField()
+
+    mail_for_reception = models.CharField(max_length=64, null=True)
+    name_file = models.CharField(max_length=20, null=True)
+    number_brand = models.IntegerField(null=True)
+    number_price = models.IntegerField(null=True)
+    number_vendor_code = models.IntegerField(null=True)
+    number_description = models.IntegerField(null=True)
+    number_availability = models.IntegerField(null=True)
 
 
 class ProviderProduct(models.Model):
@@ -114,6 +122,8 @@ class ProviderProduct(models.Model):
     id_product = models.IntegerField()
 
 
-class Config(models.Model):
-    name = models.CharField(max_length=32)
+class IgnoreConfig(models.Model):
+    id_provider = models.IntegerField()
+    brand = models.CharField(max_length=20, null=True)
+    vendor_code = models.CharField(max_length=20, null=True)
 

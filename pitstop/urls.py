@@ -23,6 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')), # перейти по ссылке home в приложение home
     path('admin_panel/brands/<int:id_provider>', view.admin_panel_brand),
-    re_path(r'admin_panel/table', view.admin_panel_table),
+    path('admin_panel/table/<int:id_provider>', view.admin_panel_table),
     re_path(r'^', view.home)
 ]

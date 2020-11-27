@@ -1,10 +1,10 @@
 .background-panel {
 	display: flex;
 	flex-direction: row;
-	width: 830px;
+	width: 1000px;
 	height: 70px;
 	background: #C4C4C4;
-	margin-left: 16px;
+	margin: auto;
 	padding-left: 8px;
 	padding-top: 8px;
 	border-radius: 0 0 10px 10px;
@@ -16,7 +16,17 @@
 	font-size: 16px;
 	line-height: 100%;
 }
-
+.btns-left{
+	display: flex;
+	flex-direction: row;
+	margin-top: 14px;
+}
+.btns-left>:nth-child(n){
+	border-radius: 10px;
+}
+.btns-left>:last-child{
+	margin-left: 10px;
+}
 .btns {
 	display: flex;
 	flex-direction: row;
@@ -74,7 +84,7 @@
 	margin-left:5px;
 	font-family: Roboto;
 	font-style: normal;
-	font-size: 0.6rem;
+	font-size: 0.7rem;
 	text-align: left;
 }
 
@@ -88,6 +98,7 @@
 
 .btn_copy:first-child {
 	margin-right: 5px;
+	margin-left: 5px;
 }
 
 .btn_copy{
