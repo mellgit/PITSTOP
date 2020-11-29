@@ -1,6 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-from home.models import Client, Garage, Car, CarOrder, Order, IgnoreConfig, Provider
+from home.models import Client, Garage, Car, CarOrder, Order, IgnoreConfig, Provider, Product
 from json import loads
 import json
 
@@ -264,5 +264,11 @@ def save_form(request):
 
     except ObjectDoesNotExist:
         return HttpResponse("Error")
+
+    return HttpResponse("Ok")
+
+
+def delete_all_products(request):
+    Product.objects.all().delete()
 
     return HttpResponse("Ok")

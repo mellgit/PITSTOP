@@ -55,11 +55,13 @@ car – объект машины содержащий (--> сделан для 
 
 class Product(models.Model):
     id = models.IntegerField(primary_key=True, unique=True, auto_created=True, null=False, default=0)
-    brand = models.CharField(max_length=20)
-    price = models.FloatField(max_length=20)
-    vendor_code = models.CharField(max_length=20)
-    description = models.CharField(max_length=64)
-    availability = models.CharField(max_length=20)
+    brand = models.CharField(max_length=20, null=True)
+    price = models.FloatField(null=True)
+    vendor_code = models.CharField(max_length=20, null=True)
+    description = models.CharField(max_length=64, null=True)
+    availability = models.CharField(max_length=20, null=True)
+    id_provide = models.IntegerField()
+    number_string = models.IntegerField()
 
 
 class Garage(models.Model):
@@ -115,11 +117,6 @@ class Provider(models.Model):
     number_vendor_code = models.IntegerField(null=True)
     number_description = models.IntegerField(null=True)
     number_availability = models.IntegerField(null=True)
-
-
-class ProviderProduct(models.Model):
-    id_provide = models.IntegerField()
-    id_product = models.IntegerField()
 
 
 class IgnoreConfig(models.Model):

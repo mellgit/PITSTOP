@@ -30,8 +30,8 @@ def decode_zip_file(zip_file):
 
 
 def has_error(field):
-    if field == "":
-        return "Ошибка"
+    if field == "nan":
+        return None
 
     return field
 
@@ -41,17 +41,10 @@ def get_id_product(cursor, vendor_code):
 
 
 def add_provide_product(connect, cursor, id_provide, id_product):
-    id_provide_product = cursor.execute("SELECT MAX(id) FROM home_providerproduct").fetchall()[0][0]
+    print("add " + str(id_provide) + " " + str(id_product))
 
-    if id_provide_product is None:
-        id_product = 0
-    else:
-        id_provide_product += 1
-
-    print("add " + str(id_provide_product) + " " + str(id_provide) + " " + str(id_product))
-
-    cursor.execute("""INSERT INTO 'home_providerproduct' VALUES (?, ?, ?)""",
-                   (str(id_provide_product), str(id_provide), str(id_product)))
+    cursor.execute("""INSERT INTO 'home_providerproduct' (id_provide, id_product) VALUES (?, ?)""",
+                   (int(id_provide), int(id_product)))
 
     connect.commit()
 
@@ -72,54 +65,44 @@ def print_data_excel_file(blob_file, cursor, connect, provider):
 
         keys = list(sheet.keys())
 
-        a = keys[index_availability]
+        try:
+            for index_row in range(len(sheet[keys[index_availability]])):
+                if index_row % 1000 == 0:
+                    print(index_row)
 
-        b = sheet[a]
+                availability = has_error(str(sheet[keys[index_availability]][index_row]))
+                brand = has_error(str(sheet[keys[index_brand]][index_row]))
+                description = has_error(str(sheet[keys[index_description]][index_row]))
 
-        print(len(sheet[keys[index_availability]]))
+                price = has_error(sheet[keys[index_price]][index_row])
+                if price is None:
+                    price = -1
 
-        # try:
-        for index_row in range(len(sheet[keys[index_availability]])):
-            if index_row % 1000 == 0:
-                print(index_row)
+                vendor_code = has_error(str(sheet[keys[index_vendor_code]][index_row]))
 
-            availability = has_error(str(sheet[keys[index_availability]][index_row]))
-            brand = has_error(str(sheet[keys[index_brand]][index_row]))
-            description = has_error(str(sheet[keys[index_description]][index_row]))
-            price = has_error(str(sheet[keys[index_price]][index_row]))
-            vendor_code = has_error(str(sheet[keys[index_vendor_code]][index_row]))
+                list_id_product = get_id_product(cursor, vendor_code)
 
-            list_id_product = get_id_product(cursor, vendor_code)
+                if len(list_id_product) == 0:
+                    print(index_row)
+                    # cursor.execute("UPDATE home_produ WHERE vendor_code=?", (vendor_code,)).fetchall()
+                    cursor.execute("""INSERT INTO 'home_product' 
+                    (brand, vendor_code, description, availability, id_provide, number_string, price) VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                                   (brand, vendor_code, description, availability, provider[0], index_row+2, price))
 
-            if len(list_id_product) == 0:
-                id_product = cursor.execute("SELECT MAX(id) FROM home_product").fetchall()[0][0]
-
-                if id_product is None:
-                    id_product = 0
+                    connect.commit()
                 else:
-                    id_product += 1
+                    id_product = list_id_product[0][0]
 
-                # cursor.execute("UPDATE home_produ WHERE vendor_code=?", (vendor_code,)).fetchall()
-                cursor.execute("""INSERT INTO 'home_product' VALUES (?, ?, ?, ?, ?, ?)""",
-                               (str(id_product), brand, availability, description, price, vendor_code))
+                    # print(brand)
 
-                connect.commit()
+                    cursor.execute("""UPDATE 'home_product' SET
+                                availability = ?, description = ?, price = ?
+                                WHERE id = ?""",
+                                   (availability, description, price, str(id_product)))
 
-            else:
-                id_product = list_id_product[0][0]
-                #
-                # add_provide_product(connect, cursor, provider[0], id_product)
-
-                # print(brand)
-
-                cursor.execute("""UPDATE 'home_product' SET
-                            availability = ?, description = ?, price = ?
-                            WHERE id = ?""",
-                               (availability, description, price, str(id_product)))
-
-                connect.commit()
-        # except Exception:
-        #     pass
+                    connect.commit()
+        except IndexError:
+            pass
 
 
 def get_email_from(email_message):

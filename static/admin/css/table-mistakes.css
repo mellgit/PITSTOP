@@ -6,8 +6,8 @@
 
 .mistakes_table {
 	display: flex;
-	flex-direction: row;
-  width: 830px;
+  flex-direction: row;
+  width: 1100px;
   border-collapse: collapse;
   font-size: 1rem;
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -27,8 +27,10 @@
   text-align: center;
   color: rgb(0, 0, 0);
   padding: 9px 8px;
+  max-width: 400px;
   transition: .3s linear;
   border-bottom: 1px solid #ccc;
+  overflow: auto;
 }
 
 

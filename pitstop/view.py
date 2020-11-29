@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse
-from home.models import IgnoreConfig, Provider, ProviderProduct, Product
-import json
+from home.models import IgnoreConfig, Provider, Product
+from django.db.models import Q
 
 
 def home(request):
@@ -14,6 +14,7 @@ def admin_panel_table(request, id_provider):
 
     data = {
         'provider': get_provider_data(provider),
+        'table': get_table(id_provider),
         'arr_providers': get_arr_provider()
     }
 
@@ -28,8 +29,7 @@ def admin_panel_brand(request, id_provider):
     max = 10000
     cur = 0
 
-    for provider_product in ProviderProduct.objects.filter(id_provide=id_provider):
-        product = Product.objects.get(id=provider_product.id_product)
+    for product in Product.objects.filter(id_provide=id_provider):
 
         brands = add_brand_to_brands(brands, product.brand)
         cur += 1
@@ -114,3 +114,34 @@ def get_arr_provider():
 
 # def change_ig
 
+def error_none(field):
+    if field is None:
+        return "Ошибка"
+
+    return field
+
+
+def get_table(id_provider):
+    res = []
+
+    #
+    # brand = models.CharField(max_length=20, null=True)
+    #     price = models.FloatField(max_length=20, null=True)
+    #     vendor_code = models.CharField(max_length=20, null=True)
+    #     description = models.CharField(max_length=64, null=True)
+    #     availability = models.CharField(max_length=20, null=True)
+
+    products = Product.objects.filter(id_provide=id_provider)
+
+    for product in products.filter(Q(brand=None) | Q(price=None) | Q(vendor_code=None) | Q(description=None) |
+                                   Q(availability=None) | Q(number_string=None)):
+        res.append({
+            "brand": error_none(product.brand),
+            "price": error_none(product.price),
+            "vendor_code": error_none(product.vendor_code),
+            "description": error_none(product.description),
+            "availability": error_none(product.availability),
+            "number_string": error_none(product.number_string)
+        })
+
+    return res

@@ -27,43 +27,18 @@
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr> <!--ряд с ячейками тела таблицы-->
 
+    {% for i in table %}
     <tr class="mistakes_tr">
         <td class="mistakes_td">
             <label class="custom-checkbox"> <input type="checkbox" value="value-1"><span></span></label>
         </td>
-        <td class="mistakes_td">Название Бренда</td>
-        <td class="mistakes_td">10</td>
-        <td class="mistakes_td">990E076J20000</td>
-        <td class="mistakes_td">000 000₽</td>
-        <td class="mistakes_td">1</td>
-        <td class="mistakes_td">Описание<img src="{% static 'admin/images/down_arrow.svg' %}"></img></td>
+        <td class="mistakes_td">{{ i.brand }}</td>
+        <td class="mistakes_td">{{ i.number_string }}</td>
+        <td class="mistakes_td">{{ i.vendor_code }}</td>
+        <td class="mistakes_td">{{ i.price }}</td>
+        <td class="mistakes_td">{{ i.availability }}</td>
+        <td class="mistakes_td">{{ i.description }}</td>
         <td class="mistakes_td">Кнопка</td>
     </tr>
-
-    <tr class="mistakes_tr">
-        <td class="mistakes_td">
-            <label class="custom-checkbox"> <input type="checkbox" value="value-1"><span></span></label>
-        </td>
-        <td class="mistakes_td">Название Бренда</td>
-        <td class="mistakes_td">10</td>
-        <td class="mistakes_td">990E076J20000</td>
-        <td class="mistakes_td">000 000₽</td>
-        <td class="mistakes_td">1</td>
-        <td class="mistakes_td">Описание<img src="{% static 'admin/images/down_arrow.svg' %}"></img></td>
-        <td class="mistakes_td">Кнопка</td>
-    </tr>
-
-    <tr class="mistakes_tr">
-        <td class="mistakes_td">
-            <label class="custom-checkbox"> <input type="checkbox" value="value-1"><span></span></label>
-        </td>
-        <td class="mistakes_td">Название Бренда</td>
-        <td class="mistakes_td">10</td>
-        <td class="mistakes_td">990E076J20000</td>
-        <td class="mistakes_td">000 000₽</td>
-        <td class="mistakes_td">1</td>
-        <td class="mistakes_td">Описание<img src="{% static 'admin/images/down_arrow.svg' %}"></img></td>
-        <td class="mistakes_td">Кнопка</td>
-    </tr>
-
+    {% endfor %}
     </table>

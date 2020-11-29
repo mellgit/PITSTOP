@@ -27,5 +27,6 @@ urlpatterns = [
     path('add_ignore_config/', add_ignore_config),
     path('delete_ignore/', delete_ignore),
     path('add_ignore/', add_ignore),
-    path('save_form/', save_form)
+    path('save_form/', save_form),
+    path('delete_all_products/', delete_all_products)
 ]
